@@ -48,11 +48,11 @@ nnoremap <C-l> <C-W>l
 
 " Colorscheme
 " ===========
-colorscheme Tomorrow
+"colorscheme Tomorrow
 " Solarized in gnome terminal
 " (http://www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html)
-" set background=dark
-" colorscheme solarized
-" let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+"let g:solarized_termcolors=256
 
 
