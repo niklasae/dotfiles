@@ -1,5 +1,7 @@
 [user]
         name = Niklas A Emanuelsson
         email = n.emanuelsson@gmail.com
+[color]
+    ui = true
 [github]
 	user = niklasae
