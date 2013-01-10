@@ -37,7 +37,7 @@ set expandtab
 noremap <Leader>w :update<CR>
 
 " Quick quit
-noremap <Leader>e :quit<CR>
+noremap <Leader>q :quit<CR>
 
 " Window switching 
 nnoremap <C-k> <C-W>k
