@@ -23,6 +23,11 @@ Vim's backup and swap files goes into '~/tmp', so that has to exist...
 
     mkdir ~/tmp
 
+and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
+
+    :BundleInstall
+
+
 ## Inspired by... ##
 
 [nelstrom/dotfiles](https://github.com/nelstrom/dotfiles)
