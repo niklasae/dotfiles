@@ -3,13 +3,35 @@ autocmd! bufwritepost .vimrc source %
 
 " Plugings
 " ========
-" Set up bundles using Pathogen (https://github.com/tpope/vim-pathogen) 
-filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-"call pathogen#helptags()
-syntax on
-filetype plugin indent on
+" Started using Vundle - https://github.com/gmarik/vundle
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+"
+" My Bundles here:
+"
+
+" original repos on github
+Bundle 'altercation/vim-colors-solarized'
+"Bundle 'tpope/vim-fugitive'
+"Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" vim-scripts repos
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+
+filetype plugin indent on     " required!
 
 
 " General options
