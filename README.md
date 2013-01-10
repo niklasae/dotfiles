@@ -25,5 +25,6 @@ Vim's backup and swap files goes into '~/tmp', so that has to exist...
 
 ## Inspired by... ##
 
-nelstrom/dotfiles
+[nelstrom/dotfiles](https://github.com/nelstrom/dotfiles)
+[holman/dotfiles](https://github.com/holman/dotfiles)
 
