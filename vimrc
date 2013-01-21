@@ -24,8 +24,6 @@ Bundle 'gmarik/vundle'
 " original repos on github
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
-" Bundle 'fholgado/minibufexpl.vim' " Command-T is much better for buffer
-" navigation
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
 " Bundle 'tpope/vim-fugitive'
@@ -46,11 +44,6 @@ filetype plugin indent on     " required!
 " -------------------------------------------------- 
 " Plugin config
 " -------------------------------------------------- 
-
-" MiniBufExplorer
-" map <Leader>b :MiniBufExplorer<CR> " Open and/or goto Explorer
-" let g:miniBufExplorerMoreThanOne=1 " Load Explorer as soon as 1 buffer is read
-" let g:miniBufExplMapCTabSwitchBufs=1 " Load next/previous buffer in window <C-TAB>/<C-S-TAB>
 
 " Flake8
 autocmd BufWritePost *.py call Flake8() " Auto run flake8 on every *.py save
