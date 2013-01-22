@@ -26,7 +26,12 @@ Vim's backup and swap files goes into '~/tmp', so that has to exist...
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
     :BundleInstall
+    
+also to enable plugin Command-T (depends on vim compiled with ruby and same version locally)
 
+    cd ~/.vim/bundle/Command-T/ruby/command-t
+    ruby extconf.rb
+    make
 
 ## Inspired by... ##
 
