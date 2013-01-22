@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Except for these files...
+#!script.pl
+
+# You can also add them straigh with git 
+#git add -f .gitignore
