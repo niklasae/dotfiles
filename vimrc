@@ -26,6 +26,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
+Bundle 'mattn/zencoding-vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -49,6 +50,12 @@ filetype plugin indent on     " required!
 autocmd BufWritePost *.py call Flake8() " Auto run flake8 on every *.py save
 let g:flake8_ignore=""
 let g:flake8_max_line_length=180
+
+" Command-T
+:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
+
+" ZenCoding
+let g:user_zen_expandabbr_key='<c-e>'
 
 
 " -------------------------------------------------- 
