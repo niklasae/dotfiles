@@ -27,7 +27,7 @@ and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle
 
     :BundleInstall
     
-also to enable plugin Command-T (depends on vim compiled with ruby and same version locally)
+also to enable plugin [Command-T](https://github.com/wincent/Command-T) (depends on vim compiled with ruby and same version locally)
 
     cd ~/.vim/bundle/Command-T/ruby/command-t
     ruby extconf.rb
