@@ -21,8 +21,12 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 
-" original repos on github
+" Colors from github
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'endel/vim-github-colorscheme'
+
+" original repos on github
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
@@ -36,7 +40,6 @@ Bundle 'mattn/zencoding-vim'
 "Bundle 'FuzzyFinder'
 
 " non github repos
-"Bundle 'git://git.wincent.com/command-t.git'
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
 
 filetype plugin indent on     " required!
@@ -48,8 +51,8 @@ filetype plugin indent on     " required!
 
 " Flake8
 autocmd BufWritePost *.py call Flake8() " Auto run flake8 on every *.py save
-let g:flake8_ignore=""
-let g:flake8_max_line_length=180
+let g:flake8_ignore="E501"
+let g:flake8_max_line_length=80
 
 " Command-T
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
@@ -64,6 +67,7 @@ let g:user_zen_expandabbr_key='<c-e>'
 
 set autoread " reload file when changed in other editors - not working completely...
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
+set dir=~/tmp/swp//,~/tmp//,. " put swp files in tmp dir if it exists
 set incsearch " incremental search
 
 " Indentation
@@ -105,6 +109,12 @@ noremap <Leader>x :wq<CR> " Quick save & quit
 noremap <Leader>e :e<CR> " Quick reload
 
 
+" -------------------------------------------------- 
+" Trix
+" -------------------------------------------------- 
+" show all TODOs in quickfix window
+noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
+
 
 " -------------------------------------------------- 
 " Appearance
@@ -113,20 +123,28 @@ set ruler
 set showcmd
 set laststatus=2
 set listchars=tab:▸\ ,eol:¬
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
 set list
 set number
 set cursorline " highlight current line
 set colorcolumn=160
 
+
+" -------------------------------------------------- 
 " Colorscheme
-" ===========
+" -------------------------------------------------- 
 set t_Co=256
+
 " colorscheme Tomorrow-Night
+
 " Solarized in gnome terminal
 " (http://www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html)
-colorscheme solarized
-set background=dark
+" colorscheme solarized
+" set background=dark
 " set background=light
 " let g:solarized_termcolors=256
 
+colorscheme lucius
+LuciusLightHighContrast
+
+" colorscheme github
