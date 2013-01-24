@@ -32,6 +32,10 @@ also to enable plugin [Command-T](https://github.com/wincent/Command-T) (depends
     cd ~/.vim/bundle/Command-T/ruby/command-t
     ruby extconf.rb
     make
+    
+also install ctags used by plugin [Tagbar](https://github.com/majutsushi/tagbar) and/or [Tag List](https://github.com/vim-scripts/taglist.vim)
+
+     sudo apt-get install exuberant-ctags
 
 ## Inspired by... ##
 
