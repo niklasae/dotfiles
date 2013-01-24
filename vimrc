@@ -31,6 +31,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
 Bundle 'mattn/zencoding-vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -58,8 +61,16 @@ let g:flake8_max_line_length=80
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
 
 " ZenCoding
-let g:user_zen_expandabbr_key='<c-e>'
+let g:user_zen_expandabbr_key='<C-e>'
 
+" SuperTab - <TAB> completion
+let g:SuperTabDefaultCompletionType="context"
+" let g:SuperTabMappingForward='<C-space>'
+" let g:SuperTabMappingBackward='<s-C-space>'
+
+" Tagbar
+let g:tagbar_userarrows=1
+nnoremap <Leader>r :TagbarToggle<CR>
 
 " -------------------------------------------------- 
 " General options
@@ -96,6 +107,7 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+:set suffixesadd+=.py,.js " files to recognise when jumping with gf
 
 " -------------------------------------------------- 
 " Leader remaps
@@ -108,6 +120,7 @@ noremap <Leader>q :quit<CR> " Quick quit
 noremap <Leader>x :wq<CR> " Quick save & quit
 noremap <Leader>e :e<CR> " Quick reload
 
+noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
 
 " -------------------------------------------------- 
 " Trix
@@ -139,10 +152,13 @@ set t_Co=256
 
 " Solarized in gnome terminal
 " (http://www.webupd8.org/2011/04/solarized-must-have-color-paletter-for.html)
-" colorscheme solarized
 " set background=dark
 " set background=light
+" let g:solarized_termtrans=1
 " let g:solarized_termcolors=256
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" colorscheme solarized
 
 colorscheme lucius
 LuciusLightHighContrast
