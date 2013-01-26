@@ -17,6 +17,7 @@ Create symlinks:
 
     ln -s ~/dotfiles/vimrc ~/.vimrc
     ln -s ~/dotfiles/vim ~/.vim
+    ln -s ~/dotfiles/gvimrc ~/.gvimrc
     ln -s ~/dotfiles/gitconfig ~/.gitconfig
 
 Vim's backup and swap files goes into '~/tmp', so that has to exist...
@@ -26,13 +27,13 @@ Vim's backup and swap files goes into '~/tmp', so that has to exist...
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
     :BundleInstall
-    
+
 also to enable plugin [Command-T](https://github.com/wincent/Command-T) (depends on vim compiled with ruby and same version locally)
 
     cd ~/.vim/bundle/Command-T/ruby/command-t
     ruby extconf.rb
     make
-    
+
 also install ctags used by plugin [Tagbar](https://github.com/majutsushi/tagbar) and/or [Tag List](https://github.com/vim-scripts/taglist.vim)
 
      sudo apt-get install exuberant-ctags
