@@ -1,0 +1,18 @@
+# --------------------------------------------------
+# -------------------- VIM TRIX --------------------
+# --------------------------------------------------
+
+# Find and replace one by one
+    1. Cursor on word
+    2. *
+    3. cw{edit}<CR>
+    4. n / N
+    5. .
+
+# Edit same section on multiple lines
+    1. Move the cursor to the n in name.
+    2. Enter visual block mode (ctrlv).
+    3. Press j multiple times.
+    4. Press I.
+    5. Type in vendor_.
+    6. Press esc.
