@@ -25,6 +25,7 @@ Bundle 'gmarik/vundle'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'endel/vim-github-colorscheme'
+Bundle 'tpope/vim-vividchalk'
 
 " original repos on github
 Bundle 'scrooloose/nerdtree'
@@ -34,6 +35,8 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-commentary'
+Bundle 'vim-scripts/mru.vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -53,9 +56,12 @@ filetype plugin indent on     " required!
 " -------------------------------------------------- 
 
 " Flake8
-autocmd BufWritePost *.py call Flake8() " Auto run flake8 on every *.py save
 let g:flake8_ignore="E501"
 let g:flake8_max_line_length=80
+
+" Auto run flake8 on every *.py save
+" autocmd BufWritePost *.py call Flake8()
+autocmd FileType python map <Leader>8 :call Flake8()<CR>
 
 " Command-T
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
@@ -72,6 +78,10 @@ let g:SuperTabDefaultCompletionType="context"
 let g:tagbar_userarrows=1
 nnoremap <Leader>r :TagbarToggle<CR>
 
+" MRU
+let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
+
+
 " -------------------------------------------------- 
 " General options
 " -------------------------------------------------- 
@@ -80,6 +90,7 @@ set autoread " reload file when changed in other editors - not working completel
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
 set dir=~/tmp/swp//,~/tmp//,. " put swp files in tmp dir if it exists
 set incsearch " incremental search
+set nrformats= " only decimal numbers
 
 " Indentation
 set tabstop=4
@@ -107,6 +118,10 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+" Better move to end and beginning of line
+nnoremap H ^
+nnoremap L $
+
 :set suffixesadd+=.py,.js " files to recognise when jumping with gf
 
 " -------------------------------------------------- 
@@ -122,11 +137,19 @@ noremap <Leader>e :e<CR> " Quick reload
 
 noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
 
+
 " -------------------------------------------------- 
 " Trix
 " -------------------------------------------------- 
 " show all TODOs in quickfix window
 noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
+" noremap <Leader>do :noautocmd vimgrep /TODO\|FIXME\|XXX/j **/*.*<CR>:cw<CR>
+
+" Find occurences, but stay put... to highlight all...
+noremap <Leader>* *N
+
+" Save file with root permissions
+cmap w!! w !sudo tee >/dev/null %
 
 
 " -------------------------------------------------- 
@@ -135,12 +158,37 @@ noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
 set ruler
 set showcmd
 set laststatus=2
-set listchars=tab:▸\ ,eol:¬
 set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
+set listchars=tab:▸\ ,eol:¬,trail:~,extends:>,precedes:<
 set list
 set number
 set cursorline " highlight current line
 set colorcolumn=160
+set hlsearch " highlight search
+
+
+" -------------------------------------------------- 
+" Make specific stuff
+" -------------------------------------------------- 
+autocmd FileType make set noexpandtab " Let's use those damn tabs in make...
+
+
+" -------------------------------------------------- 
+" Python stuff
+" -------------------------------------------------- 
+" Add the virtualenv's site-packages to vim path
+if has('python')
+py << EOF
+import os.path
+import sys
+import vim
+if 'VIRTUAL_ENV' in os.environ:
+    project_base_dir = os.environ['VIRTUAL_ENV']
+    sys.path.insert(0, project_base_dir)
+    activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+    execfile(activate_this, dict(__file__=activate_this))
+EOF
+endif
 
 
 " -------------------------------------------------- 
@@ -164,3 +212,5 @@ colorscheme lucius
 LuciusLightHighContrast
 
 " colorscheme github
+" colorscheme vividchalk
+
