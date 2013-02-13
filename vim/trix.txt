@@ -10,9 +10,17 @@
     5. .
 
 # Edit same section on multiple lines
-    1. Move the cursor to the n in name.
-    2. Enter visual block mode (ctrlv).
-    3. Press j multiple times.
-    4. Press I.
-    5. Type in vendor_.
-    6. Press esc.
+    1. Move the cursor to the n in name
+    2. <C-v> (Enter visual block mode)
+    3. Press j multiple times
+    4. I
+    5. Type in vendor_
+    6. Press esc
+
+# Indent all in file
+    1. gg=G
+
+# Redraw screen around current line (while in INSERT)
+    1. <C-o> (Insert Normal Mode)
+    2. zz
+
