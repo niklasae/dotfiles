@@ -37,9 +37,11 @@ Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-commentary'
 Bundle 'vim-scripts/mru.vim'
+Bundle 'kien/ctrlp.vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Bundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
 "Bundle 'L9'
@@ -64,7 +66,9 @@ let g:flake8_max_line_length=80
 autocmd FileType python map <Leader>8 :call Flake8()<CR>
 
 " Command-T
-:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
+let g:CommandTMaxHeight=15
+" let g:CommandTMatchWindowAtTop=1  " See the matches on the top
+
 
 " ZenCoding
 let g:user_zen_expandabbr_key='<C-e>'
@@ -80,6 +84,10 @@ nnoremap <Leader>r :TagbarToggle<CR>
 
 " MRU
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
+
+
+" Ingnore for search - CommandT & CtrlP
+:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
 
 
 " -------------------------------------------------- 
