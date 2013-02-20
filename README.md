@@ -19,11 +19,16 @@ Create symlinks:
     ln -s ~/dotfiles/vim ~/.vim
     ln -s ~/dotfiles/gvimrc ~/.gvimrc
     ln -s ~/dotfiles/gitconfig ~/.gitconfig
+    ln -s ~/dotfiles/config/pep8 ~/.config/pep8
 
-Vim's backup and swap files goes into '~/tmp', so that has to exist...
+Vim's backup and swap files goes into '~/.local/share/vim/{swap,backup,undo}' thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
 
-    mkdir ~/tmp
+    mkdir -p ~/.local/share/vim/{swap,backup,undo}
 
+Install Vim plugin dependencies
+
+    sudo pip install pyflakes
+    
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
     :BundleInstall

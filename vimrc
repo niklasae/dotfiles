@@ -36,8 +36,14 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
+" Bundle 'koron/minimap-vim'
 " Bundle 'tpope/vim-fugitive'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
@@ -85,6 +91,10 @@ nnoremap <Leader>r :TagbarToggle<CR>
 " MRU
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 
+" Syntastic
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=10
 
 " Ingnore for search - CommandT & CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
@@ -94,11 +104,7 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 " General options
 " -------------------------------------------------- 
 
-set autoread " reload file when changed in other editors - not working completely...
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
-set dir=~/tmp/swp//,~/tmp//,. " put swp files in tmp dir if it exists
-set incsearch " incremental search
-set nrformats= " only decimal numbers
 
 " Indentation
 set tabstop=4
@@ -163,12 +169,6 @@ cmap w!! w !sudo tee >/dev/null %
 " -------------------------------------------------- 
 " Appearance
 " -------------------------------------------------- 
-set ruler
-set showcmd
-set laststatus=2
-set listchars=tab:>-,eol:$,trail:~,extends:>,precedes:<
-set listchars=tab:▸\ ,eol:¬,trail:~,extends:>,precedes:<
-set list
 set number
 set cursorline " highlight current line
 set colorcolumn=160
@@ -192,9 +192,9 @@ set t_Co=256
 " let g:solarized_visibility="high"
 " colorscheme solarized
 
-colorscheme lucius
-LuciusLightHighContrast
+" colorscheme lucius
+" LuciusLightHighContrast
 
 " colorscheme github
-" colorscheme vividchalk
+colorscheme vividchalk
 
