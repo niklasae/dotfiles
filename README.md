@@ -28,7 +28,7 @@ Vim's backup and swap files goes into '~/.local/share/vim/{swap,backup,undo}' th
 Install Vim plugin dependencies
 
     sudo pip install pyflakes
-    
+
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
     :BundleInstall
