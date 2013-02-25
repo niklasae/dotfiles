@@ -138,6 +138,7 @@ nnoremap L $
 
 :set suffixesadd+=.py,.js " files to recognise when jumping with gf
 
+
 " -------------------------------------------------- 
 " Leader remaps
 " -------------------------------------------------- 
@@ -150,6 +151,9 @@ noremap <Leader>x :wq<CR> " Quick save & quit
 noremap <Leader>e :e<CR> " Quick reload
 
 noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
+
+nmap <silent> <Leader>s :set spell!<CR>
+set spelllang=en_gb  " I like British English...
 
 
 " -------------------------------------------------- 
