@@ -1,6 +1,6 @@
 set encoding=utf-8
 autocmd! bufwritepost .vimrc source %
-
+let mapleader=","
 
 " -------------------------------------------------- 
 " Plugings
@@ -36,6 +36,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
@@ -44,7 +45,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 " Bundle 'koron/minimap-vim'
-" Bundle 'tpope/vim-fugitive'
+" Bundle 'Lokaltog/powerline'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Bundle 'kchmck/vim-coffee-script'
@@ -99,6 +100,10 @@ let g:syntastic_loc_list_height=10
 " Ingnore for search - CommandT & CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
 
+" NERDTree
+noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>N :NERDTreeFind<CR> " show current file in tree
+let NERDTreeIgnore = ['\.pyc$']
 
 " -------------------------------------------------- 
 " General options
@@ -143,7 +148,6 @@ nnoremap L $
 " Leader remaps
 " -------------------------------------------------- 
 inoremap jj <Esc>  
-let mapleader=","
 
 noremap <Leader>w :update<CR> " Quick save
 noremap <Leader>q :quit<CR> " Quick quit
