@@ -64,46 +64,44 @@ filetype plugin indent on     " required!
 " Plugin config
 " -------------------------------------------------- 
 
-" Flake8
-let g:flake8_ignore="E501"
-let g:flake8_max_line_length=80
-
-" Auto run flake8 on every *.py save
-" autocmd BufWritePost *.py call Flake8()
-autocmd FileType python map <Leader>8 :call Flake8()<CR>
-
 " Command-T
 let g:CommandTMaxHeight=15
 " let g:CommandTMatchWindowAtTop=1  " See the matches on the top
 
+" Flake8
+" let g:flake8_ignore="E501"
+" let g:flake8_max_line_length=160
+" autocmd BufWritePost *.py call Flake8()  " Auto run flake8 on every *.py save
+autocmd FileType python map <Leader>8 :call Flake8()<CR>
 
-" ZenCoding
-let g:user_zen_expandabbr_key='<C-e>'
+" MRU
+let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
+
+" NERDTree
+noremap <Leader>n :NERDTreeToggle<CR>
+noremap <Leader>N :NERDTreeFind<CR> " show current file in tree
+let NERDTreeIgnore = ['\.pyc$']
 
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabMappingForward='<C-space>'
 " let g:SuperTabMappingBackward='<s-C-space>'
 
-" Tagbar
-let g:tagbar_userarrows=1
-nnoremap <Leader>r :TagbarToggle<CR>
-
-" MRU
-let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
-
 " Syntastic
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=10
 
+" Tagbar
+let g:tagbar_userarrows=1
+nnoremap <Leader>r :TagbarToggle<CR>
+
+" ZenCoding
+let g:user_zen_expandabbr_key='<C-e>'
+
 " Ingnore for search - CommandT & CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
 
-" NERDTree
-noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>N :NERDTreeFind<CR> " show current file in tree
-let NERDTreeIgnore = ['\.pyc$']
 
 " -------------------------------------------------- 
 " General options
