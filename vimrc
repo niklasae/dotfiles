@@ -22,12 +22,17 @@ Bundle 'gmarik/vundle'
 "
 
 " Colors from github
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'jonathanfilip/vim-lucius'
+Bundle 'vim-scripts/candycode.vim'
 Bundle 'endel/vim-github-colorscheme'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'tomasr/molokai'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-vividchalk'
+Bundle 'vim-scripts/Wombat'
 
 " original repos on github
+Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
@@ -42,7 +47,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/mru.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/syntastic'
 " Bundle 'koron/minimap-vim'
 " Bundle 'Lokaltog/powerline'
@@ -64,8 +68,13 @@ filetype plugin indent on     " required!
 " Plugin config
 " -------------------------------------------------- 
 
+" Ack
+" Open a new tab and search
+nmap <Leader>a :tab split<CR>:Ack ""<Left>
+nmap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
 " Command-T
-let g:CommandTMaxHeight=15
+" let g:CommandTMaxHeight=15  " Limit results
 " let g:CommandTMatchWindowAtTop=1  " See the matches on the top
 
 " Flake8
@@ -79,7 +88,7 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 
 " NERDTree
 noremap <Leader>n :NERDTreeToggle<CR>
-noremap <Leader>N :NERDTreeFind<CR> " show current file in tree
+noremap <Leader>N :NERDTreeFind<CR>  " show current file in tree
 let NERDTreeIgnore = ['\.pyc$']
 
 " SuperTab - <TAB> completion
@@ -184,6 +193,9 @@ set hlsearch " highlight search
 " -------------------------------------------------- 
 " Colorscheme
 " -------------------------------------------------- 
+" if $TERM == "xterm-256color"
+"   set t_Co=256
+" endif
 set t_Co=256
 
 " colorscheme Tomorrow-Night
