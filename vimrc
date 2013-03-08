@@ -52,7 +52,7 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'Lokaltog/powerline'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Bundle 'kchmck/vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
 "Bundle 'L9'
@@ -72,6 +72,11 @@ filetype plugin indent on     " required!
 " Open a new tab and search
 nmap <Leader>a :tab split<CR>:Ack ""<Left>
 nmap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+
+" CoffeeScript / coffee-script
+nmap <Leader>cc :CoffeeCompile vertical<CR>
+nmap <Leader>cl :CoffeeLint<CR>
+nmap <Leader>cr :CoffeeRun<CR>
 
 " Command-T
 " let g:CommandTMaxHeight=15  " Limit results
