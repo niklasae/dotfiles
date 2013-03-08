@@ -109,7 +109,7 @@ nnoremap <Leader>r :TagbarToggle<CR>
 let g:user_zen_expandabbr_key='<C-e>'
 
 " Ingnore for search - CommandT & CtrlP
-:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git
+:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**
 
 
 " -------------------------------------------------- 
