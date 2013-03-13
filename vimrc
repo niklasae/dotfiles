@@ -53,6 +53,7 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'hlissner/vim-multiedit'  " Sublime Text 2 style multi select/edit
 
 " vim-scripts repos
 "Bundle 'L9'
