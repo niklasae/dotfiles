@@ -50,7 +50,6 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/mru.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 " Bundle 'koron/minimap-vim'
@@ -58,13 +57,21 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'Lokaltog/vim-easymotion'
 " Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'hlissner/vim-multiedit'  " Sublime Text 2 style multi select/edit
+" Sublime Text 2 style multi select/edit
+Bundle 'hlissner/vim-multiedit'
+" Bundle 'Glench/Vim-Jinja2-Syntax'
+" LESS and CSS support
+Bundle 'hail2u/vim-css3-syntax'
+" Indent Guides
+Bundle 'nathanaelkane/vim-indent-guides'
 
-" vim-scripts repos
+" ~~~ vim-scripts repos ~~~
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
+Bundle 'mru.vim'
+Bundle 'nginx.vim'
 
-" non github repos
+" ~~~ Non github repos ~~~
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
 
 filetype plugin indent on     " required!
@@ -76,13 +83,13 @@ filetype plugin indent on     " required!
 
 " Ack
 " Open a new tab and search
-nmap <Leader>a :tab split<CR>:Ack ""<Left>
-nmap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
+nnoremap <Leader>a :tab split<CR>:Ack ""<Left>
+nnoremap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " CoffeeScript / coffee-script
-nmap <Leader>cc :CoffeeCompile vertical<CR>
-nmap <Leader>cl :CoffeeLint<CR>
-nmap <Leader>cr :CoffeeRun<CR>
+nnoremap <Leader>cc :CoffeeCompile vertical<CR>
+nnoremap <Leader>cl :CoffeeLint<CR>
+nnoremap <Leader>cr :CoffeeRun<CR>
 
 " Command-T
 " let g:CommandTMaxHeight=15  " Limit results
@@ -93,6 +100,18 @@ nmap <Leader>cr :CoffeeRun<CR>
 " let g:flake8_max_line_length=160
 " autocmd BufWritePost *.py call Flake8()  " Auto run flake8 on every *.py save
 autocmd FileType python map <Leader>8 :call Flake8()<CR>
+
+" Indent Guides
+nnoremap <Leader>ig :IndentGuidesToggle<CR>
+let g:indent_guides_color_change_percent = 5
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 0
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
+
+" LESS and CSS
+nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
+" Highlight and match vendor specific prefixes
+nnoremap <Leader>vp :highlight VendorPrefix guifg=#00ffff gui=bold<CR>:match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/<CR>
 
 " MRU
 let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
