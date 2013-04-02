@@ -21,17 +21,22 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 
-" Colors from github
-Bundle 'vim-scripts/candycode.vim'
+" ~~~ Colors from github ~~~
+Bundle 'lorry-lee/vim-ayumi'
 Bundle 'endel/vim-github-colorscheme'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'jonathanfilip/vim-lucius'
 Bundle 'tomasr/molokai'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'shawncplus/skittles_berry'
 Bundle 'tpope/vim-vividchalk'
-Bundle 'vim-scripts/Wombat'
 
-" original repos on github
+" ~~~ Colors from vim-scripts ~~~
+Bundle 'candycode.vim'
+Bundle 'pyte'
+Bundle 'Wombat'
+
+" ~~~ Original repos on github ~~~
 Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
@@ -130,6 +135,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set splitright  " Open splits to the right
 
 " -------------------------------------------------- 
 " Navigation
@@ -172,6 +178,8 @@ noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
 nmap <silent> <Leader>s :set spell!<CR>
 set spelllang=en_gb  " I like British English...
 
+" This unsets the 'last search pattern' register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 " -------------------------------------------------- 
 " Trix
