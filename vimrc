@@ -70,6 +70,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'FuzzyFinder'
 Bundle 'mru.vim'
 Bundle 'nginx.vim'
+Bundle 'Jinja'
 
 " ~~~ Non github repos ~~~
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
