@@ -51,6 +51,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'kien/ctrlp.vim'
+" Multi lang syntax checker and linting
 Bundle 'scrooloose/syntastic'
 " Bundle 'koron/minimap-vim'
 " Bundle 'Lokaltog/powerline'
@@ -61,9 +62,17 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'hlissner/vim-multiedit'
 " Bundle 'Glench/Vim-Jinja2-Syntax'
 " LESS and CSS support
+Bundle 'grooenewege/vim-less'
 Bundle 'hail2u/vim-css3-syntax'
+Bundle 'skammer/vim-css-color'
 " Indent Guides
 Bundle 'nathanaelkane/vim-indent-guides'
+" Auto re-size windows
+" Bundle 'justincampbell/vim-eighties'
+" :Qargs command - populate the argument list from the files in the quickfix list
+Bundle 'nelstrom/vim-qargs'
+" Search selection in visual mode (*/#)
+Bundle 'nelstrom/vim-visual-star-search'
 
 " ~~~ vim-scripts repos ~~~
 "Bundle 'L9'
