@@ -248,5 +248,5 @@ set t_Co=256
 " LuciusLightHighContrast
 
 " colorscheme github
-colorscheme vividchalk
-
+" colorscheme vividchalk
+colorscheme candycode
