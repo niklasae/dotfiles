@@ -185,6 +185,10 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
 
+" Tab switching
+nnoremap <C-Left> :tabprevious<CR>
+nnoremap <C-Right> :tabnext<CR>
+
 " Better move to end and beginning of line
 nnoremap H ^
 nnoremap L $
