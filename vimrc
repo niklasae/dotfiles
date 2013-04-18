@@ -41,7 +41,9 @@ Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'nvie/vim-flake8'
 Bundle 'wincent/Command-T'
-Bundle 'mattn/zencoding-vim'
+" sparkup insted of zencoding
+" Bundle 'mattn/zencoding-vim'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'majutsushi/tagbar'
@@ -56,7 +58,6 @@ Bundle 'scrooloose/syntastic'
 " Bundle 'koron/minimap-vim'
 " Bundle 'Lokaltog/powerline'
 " Bundle 'Lokaltog/vim-easymotion'
-" Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'kchmck/vim-coffee-script'
 " Sublime Text 2 style multi select/edit
 Bundle 'hlissner/vim-multiedit'
