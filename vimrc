@@ -146,9 +146,6 @@ let g:syntastic_loc_list_height=10
 let g:tagbar_userarrows=1
 nnoremap <Leader>r :TagbarToggle<CR>
 
-" ZenCoding
-let g:user_zen_expandabbr_key='<C-e>'
-
 " Ingnore for search - CommandT & CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**
 
