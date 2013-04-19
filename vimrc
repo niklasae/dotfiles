@@ -74,6 +74,8 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nelstrom/vim-qargs'
 " Search selection in visual mode (*/#)
 Bundle 'nelstrom/vim-visual-star-search'
+" Nice and useful undotree
+Bundle 'sjl/gundo.vim'
 
 " ~~~ vim-scripts repos ~~~
 "Bundle 'L9'
@@ -111,6 +113,9 @@ nnoremap <Leader>cr :CoffeeRun<CR>
 " let g:flake8_max_line_length=160
 " autocmd BufWritePost *.py call Flake8()  " Auto run flake8 on every *.py save
 autocmd FileType python map <Leader>8 :call Flake8()<CR>
+
+" Gundo - useful undo-tree
+nnoremap <Leader>gu :GundoToggle<CR>
 
 " Indent Guides
 nnoremap <Leader>ig :IndentGuidesToggle<CR>
