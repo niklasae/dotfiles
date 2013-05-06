@@ -76,6 +76,8 @@ Bundle 'nelstrom/vim-qargs'
 Bundle 'nelstrom/vim-visual-star-search'
 " Nice and useful undotree
 Bundle 'sjl/gundo.vim'
+" Vim as Python IDE with Jedi codecompletion - (pip install jedi)
+Bundle 'davidhalter/jedi-vim'
 
 " ~~~ vim-scripts repos ~~~
 "Bundle 'L9'
