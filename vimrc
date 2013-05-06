@@ -127,7 +127,7 @@ let g:indent_guides_guide_size = 0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " LESS and CSS
-nnoremap <Leader>m :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
+nnoremap <Leader>lc :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
 " Highlight and match vendor specific prefixes
 nnoremap <Leader>vp :highlight VendorPrefix guifg=#00ffff gui=bold<CR>:match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-Z-]\+/<CR>
 
@@ -215,6 +215,9 @@ noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
 
 nmap <silent> <Leader>s :set spell!<CR>
 set spelllang=en_gb  " I like British English...
+
+" Make it easy to save session in ~/.locale/share/vim/sessions
+nnoremap <Leader>mks :mks! ~/.local/share/vim/sessions/
 
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>

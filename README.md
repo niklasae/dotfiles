@@ -24,10 +24,11 @@ Create symlinks:
 
 Vim's backup and swap files goes into '~/.local/share/vim/{swap,backup,undo}' thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
 
-    mkdir -p ~/.local/share/vim/{swap,backup,undo}
+    mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
 
 Install Vim plugin dependencies
 
+    sudo pip install jedi
     sudo pip install pyflakes
 
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
