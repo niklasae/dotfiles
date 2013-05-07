@@ -22,7 +22,7 @@ Create symlinks:
     ln -s ~/dotfiles/config/pep8 ~/.config/pep8
     ln -s ~/dotfiles/config/flake8 ~/.config/flake8
 
-Vim's backup and swap files goes into '~/.local/share/vim/{swap,backup,undo}' thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
+Vim's backup and swap files goes into `~/.local/share/vim/{swap,backup,undo,sessions}` thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
 
     mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
 
@@ -30,6 +30,7 @@ Install Vim plugin dependencies
 
     sudo pip install jedi
     sudo pip install pyflakes
+    sudo pip install pylint
 
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
