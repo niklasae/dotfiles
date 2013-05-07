@@ -32,6 +32,9 @@ Install Vim plugin dependencies
     sudo pip install pyflakes
     sudo pip install pylint
 
+    npm install -g coffeelint
+    npm install -g coffee-script
+
 and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
 
     :BundleInstall
