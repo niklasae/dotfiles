@@ -126,6 +126,15 @@ let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
+" Jedi
+" Realy only using defaults, but want to keep track of anyway
+let g:jedi#goto_command = "<Leader>g"
+let g:jedi#get_definition_command = "<Leader>d"
+let g:jedi#pydoc = "K"
+let g:jedi#rename_command = "<Leader>r"
+let g:jedi#related_names_command = "<Leader>n"
+let g:jedi#autocompletion_command = "<C-Space>"
+
 " LESS and CSS
 nnoremap <Leader>lc :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
 " Highlight and match vendor specific prefixes
