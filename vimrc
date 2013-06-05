@@ -131,8 +131,8 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 let g:jedi#goto_command = "<Leader>g"
 let g:jedi#get_definition_command = "<Leader>d"
 let g:jedi#pydoc = "K"
-let g:jedi#rename_command = "<Leader>r"
-let g:jedi#related_names_command = "<Leader>n"
+let g:jedi#rename_command = "<Leader>rnc"
+let g:jedi#related_names_command = "<Leader>rnn"
 let g:jedi#autocompletion_command = "<C-Space>"
 
 " LESS and CSS
