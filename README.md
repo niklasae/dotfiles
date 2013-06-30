@@ -21,6 +21,7 @@ Create symlinks:
     ln -s ~/dotfiles/gitconfig ~/.gitconfig
     ln -s ~/dotfiles/config/pep8 ~/.config/pep8
     ln -s ~/dotfiles/config/flake8 ~/.config/flake8
+    ln -s ~/dotfiles/pip ~/.pip
 
 Vim's backup and swap files goes into `~/.local/share/vim/{swap,backup,undo,sessions}` thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
 
@@ -55,3 +56,4 @@ also install ctags used by plugin [Tagbar](https://github.com/majutsushi/tagbar)
 
 [holman/dotfiles](https://github.com/holman/dotfiles)
 
+[rdegges/.dotfiles](https://github.com/rdegges/.dotfiles)
