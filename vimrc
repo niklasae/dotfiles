@@ -250,7 +250,7 @@ cmap w!! w !sudo tee >/dev/null %
 " -------------------------------------------------- 
 set number
 set cursorline " highlight current line
-set colorcolumn=160
+set colorcolumn=80
 set hlsearch " highlight search
 
 
