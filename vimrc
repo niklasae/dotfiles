@@ -79,6 +79,10 @@ Bundle 'sjl/gundo.vim'
 " Vim as Python IDE with Jedi codecompletion - (pip install jedi)
 Bundle 'davidhalter/jedi-vim'
 
+" PHP (I know, I don't really want to, but I have too...)
+Bundle 'shawncplus/phpcomplete.vim'
+
+
 " ~~~ vim-scripts repos ~~~
 "Bundle 'L9'
 "Bundle 'FuzzyFinder'
