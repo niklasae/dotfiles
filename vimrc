@@ -63,7 +63,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'hlissner/vim-multiedit'
 " Bundle 'Glench/Vim-Jinja2-Syntax'
 " LESS and CSS support
-Bundle 'grooenewege/vim-less'
+Bundle 'groenewege/vim-less'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'skammer/vim-css-color'
 " Indent Guides
