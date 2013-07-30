@@ -89,6 +89,9 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'mru.vim'
 Bundle 'nginx.vim'
 Bundle 'Jinja'
+" Find TODO/FIXME/XXX
+Bundle 'TaskList.vim'  
+
 
 " ~~~ Non github repos ~~~
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
@@ -166,6 +169,9 @@ let g:syntastic_loc_list_height=10
 let g:tagbar_userarrows=1
 nnoremap <Leader>r :TagbarToggle<CR>
 
+" TaskList
+map <Leader>td :TaskList<CR>
+
 " Ingnore for search - CommandT & CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**
 
@@ -238,9 +244,9 @@ nnoremap <CR> :noh<CR><CR>
 " -------------------------------------------------- 
 " Trix
 " -------------------------------------------------- 
-" show all TODOs in quickfix window
-noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
-" noremap <Leader>do :noautocmd vimgrep /TODO\|FIXME\|XXX/j **/*.*<CR>:cw<CR>
+" show all TODO/FIXME/XXX in quickfix window
+" noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
+noremap <Leader>do :noautocmd vimgrep /\(TODO\)\|\(FIXME\)\|\(XXX\)/j **/*.*<CR>:cw<CR>
 
 " Find occurences, but stay put... to highlight all...
 noremap <Leader>* *N
