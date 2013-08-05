@@ -23,7 +23,7 @@ Create symlinks:
     ln -s ~/dotfiles/config/flake8 ~/.config/flake8
     ln -s ~/dotfiles/pip ~/.pip
 
-    Create dir for download cache for pip specified in `~/.pip/pip.conf`
+Create dir for download cache for pip specified in `~/.pip/pip.conf`
 
     mkdir -p ~/.pip/download
 
