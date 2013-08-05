@@ -251,7 +251,7 @@ noremap <Leader>do :noautocmd vimgrep /\(TODO\)\|\(FIXME\)\|\(XXX\)/j **/*.*<CR>
 " Find occurences, but stay put... to highlight all...
 noremap <Leader>* *N
 
-" Save file with root permissions
+" Save file with root permissions (inspired by `$ sudo !!`)
 cmap w!! w !sudo tee >/dev/null %
 
 
