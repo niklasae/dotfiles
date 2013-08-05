@@ -23,6 +23,10 @@ Create symlinks:
     ln -s ~/dotfiles/config/flake8 ~/.config/flake8
     ln -s ~/dotfiles/pip ~/.pip
 
+    Create dir for download cache for pip specified in `~/.pip/pip.conf`
+
+    mkdir -p ~/.pip/download
+
 Vim's backup and swap files goes into `~/.local/share/vim/{swap,backup,undo,sessions}` thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
 
     mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
