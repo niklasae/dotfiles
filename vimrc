@@ -28,6 +28,7 @@ Bundle 'Colour-Sampler-Pack'
 Bundle 'lorry-lee/vim-ayumi'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'shawncplus/skittles_berry'
+Bundle 'altercation/vim-colors-solarized'
 
 " ~~~ Colors from vim-scripts ~~~
 " Bundle ''
