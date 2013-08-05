@@ -21,20 +21,16 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 
+" ~~~ Color-packs from vim-scripts ~~~
+Bundle 'Colour-Sampler-Pack'
+
 " ~~~ Colors from github ~~~
 Bundle 'lorry-lee/vim-ayumi'
-Bundle 'endel/vim-github-colorscheme'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'tomasr/molokai'
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'shawncplus/skittles_berry'
-Bundle 'tpope/vim-vividchalk'
 
 " ~~~ Colors from vim-scripts ~~~
-Bundle 'candycode.vim'
-Bundle 'pyte'
-Bundle 'Wombat'
+" Bundle ''
 
 " ~~~ Original repos on github ~~~
 Bundle 'mileszs/ack.vim'
@@ -91,6 +87,7 @@ Bundle 'nginx.vim'
 Bundle 'Jinja'
 " Find TODO/FIXME/XXX
 Bundle 'TaskList.vim'  
+Bundle 'ScrollColors'
 
 
 " ~~~ Non github repos ~~~
