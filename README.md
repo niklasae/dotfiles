@@ -7,52 +7,12 @@ Clone the repo:
 
     git clone ssh://git@github.com/niklasae/dotfiles.git ~/dotfiles
 
-Check out git submodules:
+The run prereq and setup
 
-    cd dotfiles
-    git submodule init
-    git submodule update
+    ./prereq.sh
+    ./setup.sh
 
-Create symlinks:
-
-    ln -s ~/dotfiles/vimrc ~/.vimrc
-    ln -s ~/dotfiles/vim ~/.vim
-    ln -s ~/dotfiles/gvimrc ~/.gvimrc
-    ln -s ~/dotfiles/gitconfig ~/.gitconfig
-    ln -s ~/dotfiles/config/pep8 ~/.config/pep8
-    ln -s ~/dotfiles/config/flake8 ~/.config/flake8
-    ln -s ~/dotfiles/pip ~/.pip
-
-Create dir for download cache for pip specified in `~/.pip/pip.conf`
-
-    mkdir -p ~/.pip/download
-
-Vim's backup and swap files goes into `~/.local/share/vim/{swap,backup,undo,sessions}` thanks to [vim-sensible](https://github.com/tpope/vim-sensible), so that has to exist...
-
-    mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
-
-Install Vim plugin dependencies
-
-    sudo pip install jedi
-    sudo pip install pyflakes
-    sudo pip install pylint
-
-    npm install -g coffeelint
-    npm install -g coffee-script
-
-and Vim's plugin management is done by [Vundle](https://github.com/gmarik/vundle), so don't forget
-
-    :BundleInstall
-
-also to enable plugin [Command-T](https://github.com/wincent/Command-T) (depends on vim compiled with ruby and same version locally)
-
-    cd ~/.vim/bundle/Command-T/ruby/command-t
-    ruby extconf.rb
-    make
-
-also install ctags used by plugin [Tagbar](https://github.com/majutsushi/tagbar) and/or [Tag List](https://github.com/vim-scripts/taglist.vim)
-
-     sudo apt-get install exuberant-ctags
+They will install dependencies, setup symlinks and create relevant directories.
 
 ## Inspired by... ##
 
