@@ -5,3 +5,5 @@
     ui = true
 [github]
 	user = niklasae
+[push]
+	default = simple
