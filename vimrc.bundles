@@ -1,0 +1,89 @@
+" Started using Vundle - https://github.com/gmarik/vundle
+set nocompatible               " be iMproved
+
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+"
+" My Bundles here:
+"
+
+" ~~~ Color-packs from vim-scripts ~~~
+Bundle 'Colour-Sampler-Pack'
+
+" ~~~ Colors from github ~~~
+Bundle 'lorry-lee/vim-ayumi'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'shawncplus/skittles_berry'
+Bundle 'altercation/vim-colors-solarized'
+
+" ~~~ Colors from vim-scripts ~~~
+" Bundle ''
+
+" ~~~ Original repos on github ~~~
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'nvie/vim-flake8'
+Bundle 'wincent/Command-T'
+" sparkup insted of zencoding
+" Bundle 'mattn/zencoding-vim'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
+Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'kien/ctrlp.vim'
+" Multi lang syntax checker and linting
+Bundle 'scrooloose/syntastic'
+" Bundle 'koron/minimap-vim'
+" Bundle 'Lokaltog/powerline'
+" Bundle 'Lokaltog/vim-easymotion'
+Bundle 'kchmck/vim-coffee-script'
+" Sublime Text 2 style multi select/edit
+Bundle 'hlissner/vim-multiedit'
+" Bundle 'Glench/Vim-Jinja2-Syntax'
+" LESS and CSS support
+Bundle 'groenewege/vim-less'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'skammer/vim-css-color'
+" Indent Guides
+Bundle 'nathanaelkane/vim-indent-guides'
+" Auto re-size windows
+" Bundle 'justincampbell/vim-eighties'
+" :Qargs command - populate the argument list from the files in the quickfix list
+Bundle 'nelstrom/vim-qargs'
+" Search selection in visual mode (*/#)
+Bundle 'nelstrom/vim-visual-star-search'
+" Nice and useful undotree
+Bundle 'sjl/gundo.vim'
+" Vim as Python IDE with Jedi codecompletion - (pip install jedi)
+Bundle 'davidhalter/jedi-vim'
+
+" PHP (I know, I don't really want to, but I have too...)
+Bundle 'shawncplus/phpcomplete.vim'
+
+
+" ~~~ vim-scripts repos ~~~
+"Bundle 'L9'
+"Bundle 'FuzzyFinder'
+Bundle 'mru.vim'
+Bundle 'nginx.vim'
+Bundle 'Jinja'
+" Find TODO/FIXME/XXX
+Bundle 'TaskList.vim'  
+Bundle 'ScrollColors'
+
+
+" ~~~ Non github repos ~~~
+"Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
+
+filetype plugin indent on     " required!

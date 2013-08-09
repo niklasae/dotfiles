@@ -22,6 +22,7 @@ ln -s "$DIR/gvimrc" ~/.gvimrc
 sudo rm -rf ~/.pip && ln -s "$DIR/pip" ~/.pip
 ln -s "$DIR/vim" ~/.vim
 ln -s "$DIR/vimrc" ~/.vimrc
+ln -s "$DIR/vimrc.bundles" ~/.vimrc.bundles
 ln -s "$DIR/zshrc" ~/.zshrc
 
 # Create dir for Vim backup, swap and other files...
@@ -29,7 +30,7 @@ ln -s "$DIR/zshrc" ~/.zshrc
 mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
 
 # Setup all Vim plugins
-vim +BundleInstall +qall
+vim -u ~/.vimrc.bundles +BundleInstall +qa
 
 # Enable Vim plugin Command-T
 # Depends on Vim compiled with same version of ruby which is set up in prereq.sh
