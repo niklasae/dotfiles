@@ -12,7 +12,7 @@ sudo pip install -U pyflaskes
 sudo pip install -U pylint 
 
 npm install -g coffee-script
-npm install -g coffee-lint
+npm install -g coffeelint
 
 # http://jeroenbourgois.be/command-t-macvim-and-rvm/
 vim_ruby_version=$(vim --version | grep -o 'ruby-[0-9\.]*' | grep -o '[0-9\.]*')
