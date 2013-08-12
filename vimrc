@@ -66,15 +66,6 @@ noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>N :NERDTreeFind<CR>  " show current file in tree
 let NERDTreeIgnore = ['\.pyc$']
 
-" Pomodoro
-let g:pomodoro_time_work = 25
-let g:pomodoro_time_slack = 5
-let g:pomodoro_do_log = 1
-let g:pomodoro_log_file = '~/pomodoro.log'
-" set statusline+=%#ErrorMsg#%{PomodoroStatus()}%#StatusLine#
-" let g:pomodoro_notification_cmd = 'zenity --notification --text="Pomodoro finished"''
-
-
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabMappingForward='<C-space>'
@@ -115,9 +106,8 @@ set splitright  " Open splits to the right
 set statusline=%f       "filename
 set statusline+=%m      "modified flag
 set statusline+=%h      "help file flag
-set statusline+=%y      "filetype
-set statusline+=\ \ \ \ %{PomodoroStatus()}
 set statusline+=%=      "left/right separator
+set statusline+=%y      "filetype
 set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set statusline+=%{&ff}]\ \  "file format
 set statusline+=%c,%l     "cursor column, cursor line

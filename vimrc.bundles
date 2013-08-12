@@ -87,10 +87,7 @@ Bundle 'nvie/vim-flake8'
 Bundle 'davidhalter/jedi-vim'
 
 
-" ~~~~ Productivityi ~~~
-" Track pomodoros - depends on AsyncCommand
-Bundle 'pydave/AsyncCommand'
-Bundle 'mnick/vim-pomodoro'
+" ~~~~ Productivity ~~~
 
 
 " ~~~ Other... ~~~
