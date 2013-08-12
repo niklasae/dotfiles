@@ -19,6 +19,9 @@ vim_ruby_version=$(vim --version | grep -o 'ruby-[0-9\.]*' | grep -o '[0-9\.]*')
 rvm install $vim_ruby_version
 rvm use $vim_ruby_version --default
 
+# pomo - local version of pomo (depends on libnotify...)
+gem install libnotify pomo
+
 echo "Which OS are you on?"
 select os in Ubuntu Other
 do

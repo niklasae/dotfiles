@@ -1,0 +1,4 @@
+---
+:notifier: libnotify
+:progress: true
+:tmux: true

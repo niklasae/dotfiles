@@ -21,6 +21,7 @@ ln -s "$DIR/config/flake8" ~/.config/flake8
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/gvimrc" ~/.gvimrc
 sudo rm -rf ~/.pip && ln -s "$DIR/pip" ~/.pip
+ln -s "$DIR/pomorc" ~/.pomorc
 ln -s "$DIR/vim" ~/.vim
 ln -s "$DIR/vimrc" ~/.vimrc
 ln -s "$DIR/vimrc.bundles" ~/.vimrc.bundles
