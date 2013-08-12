@@ -15,6 +15,7 @@ git submodule init
 git submodule update
 
 # Setup symbolic links
+ln -s "$DIR/bin" ~/.bin
 ln -s "$DIR/config/pep8" ~/.config/pep8
 ln -s "$DIR/config/flake8" ~/.config/flake8
 ln -s "$DIR/gitconfig" ~/.gitconfig

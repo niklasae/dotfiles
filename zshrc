@@ -38,8 +38,9 @@ source $ZSH/oh-my-zsh.sh
 
 ### General
 
-# Add ~/bin to PATH
+# Add ~/bin and ~/.bin to PATH
 [[ -d "$HOME/bin" ]] && PATH="$HOME/bin/:$PATH"
+[[ -d "$HOME/.bin" ]] && PATH="$HOME/.bin/:$PATH"
 
 # 256 bit colors in tmux
 [[ -z "$TMUX" ]] && export TERM=xterm-256color
