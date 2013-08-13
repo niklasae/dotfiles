@@ -47,8 +47,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'L9'
 Bundle 'mru.vim'
-" Sublime Text 2 style multi select/edit
-Bundle 'hlissner/vim-multiedit'
+" Sublime Text style multicursor
+Bundle 'paradigm/vim-multicursor'
 Bundle 'scrooloose/nerdtree'
 " :Qargs command - populate the argument list from the files in the quickfix list
 Bundle 'nelstrom/vim-qargs'
@@ -82,8 +82,8 @@ Bundle 'Jinja'
 Bundle 'shawncplus/phpcomplete.vim'
 
 " ~~~ python ~~~
-Bundle 'nvie/vim-flake8'
-" Vim as Python IDE with Jedi codecompletion - (pip install jedi)
+Bundle 'klen/python-mode'
+" Jedi code- navigation/completion - (pip install jedi)
 Bundle 'davidhalter/jedi-vim'
 
 

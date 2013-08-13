@@ -28,12 +28,6 @@ nnoremap <Leader>cr :CoffeeRun<CR>
 " let g:CommandTMaxHeight=15  " Limit results
 " let g:CommandTMatchWindowAtTop=1  " See the matches on the top
 
-" Flake8
-" let g:flake8_ignore="E501"
-" let g:flake8_max_line_length=160
-" autocmd BufWritePost *.py call Flake8()  " Auto run flake8 on every *.py save
-autocmd FileType python map <Leader>8 :call Flake8()<CR>
-
 " Gundo - useful undo-tree
 nnoremap <Leader>gu :GundoToggle<CR>
 
@@ -65,6 +59,10 @@ let MRU_Exclude_Files = '^/tmp/.*\|^/var/tmp/.*'
 noremap <Leader>n :NERDTreeToggle<CR>
 noremap <Leader>N :NERDTreeFind<CR>  " show current file in tree
 let NERDTreeIgnore = ['\.pyc$']
+
+" Python-mode
+" Turn off rope and use Jedi instead
+let g:pymode_rope = 0
 
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
