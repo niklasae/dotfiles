@@ -47,8 +47,8 @@ Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'L9'
 Bundle 'mru.vim'
-" Sublime Text style multicursor
-Bundle 'paradigm/vim-multicursor'
+" Sublime Text style multi-cursor select and edit
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/nerdtree'
 " :Qargs command - populate the argument list from the files in the quickfix list
 Bundle 'nelstrom/vim-qargs'
