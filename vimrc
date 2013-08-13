@@ -63,6 +63,14 @@ let NERDTreeIgnore = ['\.pyc$']
 " Python-mode
 " Turn off rope and use Jedi instead
 let g:pymode_rope = 0
+" Enable linting and auto write check
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_onfly = 0
+let g:pymode_lint_write = 1
+let g:pymode_lint_ignore = "E501"
+" Enable folding
+let g:pymode_folding = 1
 
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
@@ -73,6 +81,9 @@ let g:SuperTabDefaultCompletionType="context"
 let g:syntastic_check_on_open=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=10
+" Enable active linting and disable lint for some types(:SyntasticCheck)
+" python - python-mode linter
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['python'] }
 
 " Tagbar
 let g:tagbar_userarrows=1
@@ -139,6 +150,8 @@ nnoremap <C-Right> :tabnext<CR>
 " Better move to end and beginning of line
 nnoremap H ^
 nnoremap L $
+nnoremap <C-e> $
+inoremap <C-e> <Esc>A
 
 :set suffixesadd+=.py,.js " files to recognise when jumping with gf
 
