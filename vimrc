@@ -192,6 +192,16 @@ cmap w!! w !sudo tee >/dev/null %
 
 
 " -------------------------------------------------- 
+" Searching
+" -------------------------------------------------- 
+" Enable smartcase (needs ignorecase) - lower finds all / upper finds exact
+" Enable incremental search to see matches as we type
+set ignorecase
+set smartcase
+set incsearch
+
+
+" -------------------------------------------------- 
 " Appearance
 " -------------------------------------------------- 
 set number
