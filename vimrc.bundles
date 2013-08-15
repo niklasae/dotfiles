@@ -60,6 +60,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
 Bundle 'tpope/vim-unimpaired'
+" VimRoom - writeroom clone
+Bundle 'mikewest/vimroom'
 " Search selection in visual mode (*/#)
 Bundle 'nelstrom/vim-visual-star-search'
 
