@@ -155,6 +155,8 @@ inoremap <C-e> <Esc>A
 
 :set suffixesadd+=.py,.js " files to recognise when jumping with gf
 
+" Copy/Yank the rest of line
+nnoremap Y y$
 
 " -------------------------------------------------- 
 " Leader remaps
