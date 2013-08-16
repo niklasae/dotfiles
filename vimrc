@@ -213,6 +213,14 @@ set hlsearch " highlight search
 
 
 " -------------------------------------------------- 
+" Appearance - Powerline
+" -------------------------------------------------- 
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" Always show statusline
+set laststatus=2
+
+
+" -------------------------------------------------- 
 " Colorscheme
 " -------------------------------------------------- 
 " if $TERM == "xterm-256color"
