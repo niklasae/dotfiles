@@ -123,6 +123,11 @@ set statusline+=%c,%l     "cursor column, cursor line
 set statusline+=\ %L   "/total lines
 set statusline+=\ %P    "percent through file
 
+" Undo - is actually set in vim-sensible...
+set undodir=~/.local/share/vim/undo
+set undofile
+set undolevels=1000  "maximum number of changes that can be undone
+set undoreload=10000  "maximum number lines to save for undo on a buffer reload
 
 " -------------------------------------------------- 
 " Navigation
