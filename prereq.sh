@@ -3,6 +3,12 @@
 # dotfiles prerequisites
 #
 
+## Calling dir
+calling_dir=$PWD
+
+# Get dotfiles directory
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # zsh
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
@@ -30,7 +36,10 @@ do
             sudo aptitude install -y exuberant-ctags
             break;;
         Other )
-            echo "Nothing for you..."
+            echo "You probably want to unlink the default phantomjs in ~/.bin..."
             break;;
     esac
 done
+
+# Go back to dir we came from
+cd $calling_dir
