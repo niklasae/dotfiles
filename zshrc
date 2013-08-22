@@ -49,7 +49,7 @@ if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.z
 fi
 
 # 256 colors
-export TERM=xterm-256color
+#export TERM=xterm-256color
 
 # 256 colors in tmux
 [[ -z "$TMUX" ]] && export TERM=xterm-256color
