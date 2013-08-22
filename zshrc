@@ -80,7 +80,7 @@ export NVM_HOME="$HOME/.nvm"
 ### ruby
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source $HOME/.rvm/scripts/rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
 ### tools
@@ -120,4 +120,4 @@ alias kse="setxkbmap se"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Add RVM to PATH for scripting
-export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"
