@@ -88,7 +88,9 @@ export NVM_HOME="$HOME/.nvm"
 ### tools
 
 # autoenv (https://github.com/kennethreitz/autoenv).
-[[ -s /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
+#[[ -s /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
+[[ -s "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
+
 
 # use_env / autoenv (https://github.com/kennethreitz/autoenv/wiki/Cookbook)
 # The use_env call below is a reusable command to activate/create a new Python
