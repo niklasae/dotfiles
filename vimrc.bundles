@@ -21,14 +21,14 @@ Bundle 'gmarik/vundle'
 "
 
 " ~~~ Color-packs ~~~
-Bundle 'Colour-Sampler-Pack'
+Bundle 'flazz/vim-colorschemes'
 
 " ~~~ Colors ~~~
 Bundle 'lorry-lee/vim-ayumi'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'shawncplus/skittles_berry'
 Bundle 'altercation/vim-colors-solarized'
-" Color picker
+
+" ~~~ Color picker ~~~
 Bundle 'ScrollColors'
 
 " ~~~ General ~~~
