@@ -20,11 +20,6 @@ sudo pip install -U pylint
 npm install -g coffee-script
 npm install -g coffeelint
 
-# http://jeroenbourgois.be/command-t-macvim-and-rvm/
-vim_ruby_version=$(vim --version | grep -o 'ruby-[0-9\.]*' | grep -o '[0-9\.]*')
-rvm install $vim_ruby_version
-rvm use $vim_ruby_version --default
-
 # pomo - local version of pomo (depends on libnotify...)
 gem install libnotify pomo
 

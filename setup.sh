@@ -35,11 +35,5 @@ mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
 # Setup all Vim plugins - can also be used for bundle updates
 vim -u ~/.vimrc.bundles +BundleInstall! +BundleClean +qa
 
-# Enable Vim plugin Command-T
-# Depends on Vim compiled with same version of ruby which is set up in prereq.sh
-cd ~/.vim/bundle/Command-T/ruby/command-t
-ruby extconf.rb
-make
-
 # Go back to dir we came from
 cd $calling_dir

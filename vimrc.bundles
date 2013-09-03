@@ -33,7 +33,6 @@ Bundle 'ScrollColors'
 
 " ~~~ General ~~~
 Bundle 'mileszs/ack.vim'
-Bundle 'wincent/Command-T'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'

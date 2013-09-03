@@ -24,10 +24,6 @@ nnoremap <Leader>cc :CoffeeCompile vertical<CR>
 nnoremap <Leader>cl :CoffeeLint<CR>
 nnoremap <Leader>cr :CoffeeRun<CR>
 
-" Command-T
-" let g:CommandTMaxHeight=15  " Limit results
-" let g:CommandTMatchWindowAtTop=1  " See the matches on the top
-
 " Gundo - useful undo-tree
 nnoremap <Leader>gu :GundoToggle<CR>
 
@@ -92,7 +88,7 @@ nnoremap <Leader>r :TagbarToggle<CR>
 " TaskList
 map <Leader>td :TaskList<CR>
 
-" Ingnore for search - CommandT & CtrlP
+" Ingnore for search - CtrlP
 :set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**
 
 
