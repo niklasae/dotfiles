@@ -68,6 +68,16 @@ let g:pymode_lint_ignore = "E501,E128"
 " Enable folding
 let g:pymode_folding = 1
 
+" Sparkup
+" Get sparkup in other filetypes than html
+" See: https://github.com/rstacruz/sparkup/issues/33#issuecomment-3135285
+augroup sparkup_types
+  " Remove ALL autocommands of the current group.
+  autocmd!
+  " Add sparkup to new filetypes
+  autocmd FileType mustache,htmldjango,htmljinja runtime! bundle/sparkup/vim/ftplugin/html/sparkup.vim
+augroup END
+
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabMappingForward='<C-space>'
