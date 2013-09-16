@@ -172,13 +172,16 @@ nnoremap Y y$
 " -------------------------------------------------- 
 " Leader remaps
 " -------------------------------------------------- 
-inoremap jj <Esc>  
+inoremap jj <Esc>
 
 noremap <Leader>w :update<CR> " Quick save
 noremap <Leader>q :quit<CR> " Quick quit
 noremap <Leader>x :wq<CR> " Quick save & quit
 noremap <Leader>e :e<CR> " Quick reload
 
+" Display invisible characters
+set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
+set list
 noremap <Leader>l :set list!<CR> " Toggle show/hide listchars
 
 nmap <silent> <Leader>s :set spell!<CR>
