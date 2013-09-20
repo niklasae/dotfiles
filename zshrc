@@ -63,6 +63,17 @@ fi
 [[ -d "$HOME/Code" ]] && export PROJECTS="$HOME/Code"
 
 
+### keybindings
+
+# history search
+#bindkey "^r" history-search-backward
+#bindkey "^R" history-search-forward
+
+### java
+# Needs to be set for AWS RDS CLI
+export JAVA_HOME=/usr/lib/jvm/default-java
+
+
 ### node.js
 
 # nvm
@@ -91,7 +102,6 @@ export NVM_HOME="$HOME/.nvm"
 #[[ -s /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
 [[ -s "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
 
-
 # use_env / autoenv (https://github.com/kennethreitz/autoenv/wiki/Cookbook)
 # The use_env call below is a reusable command to activate/create a new Python
 # virtualenv, requiring only a single declarative line of code in your .env files.
@@ -111,6 +121,10 @@ use_env() {
     fi
   fi
 }
+
+# AWS RDS CLI
+export AWS_RDS_HOME="$HOME/Software/RDSCli"
+[[ -d "$AWS_RDS_HOME" ]] && PATH="$AWS_RDS_HOME/bin/:$PATH"
 
 
 ### aliases
