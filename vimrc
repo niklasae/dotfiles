@@ -5,9 +5,22 @@ let mapleader=","
 " -------------------------------------------------- 
 " Plugings
 " -------------------------------------------------- 
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
+
+
+" -------------------------------------------------- 
+" Post Plugings
+" -------------------------------------------------- 
+
+" Set .vim and .vim/after first and last on runtimepath
+" This is needed to get local spell file working among others.
+set rtp-=~/.vim
+set rtp^=~/.vim
+set rtp-=~/.vim/after
+set rtp+=~/.vim/after
 
 
 " -------------------------------------------------- 
@@ -35,7 +48,7 @@ let g:indent_guides_guide_size = 0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " Jedi
-" Realy only using defaults, but want to keep track of anyway
+" Really only using defaults, but want to keep track of anyway
 let g:jedi#goto_command = "<Leader>g"
 let g:jedi#get_definition_command = "<Leader>d"
 let g:jedi#pydoc = "K"
