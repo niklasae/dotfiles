@@ -28,9 +28,8 @@ ln -s "$DIR/vimrc" ~/.vimrc
 ln -s "$DIR/vimrc.bundles" ~/.vimrc.bundles
 ln -s "$DIR/zshrc" ~/.zshrc
 
-# Create dir for Vim backup, swap and other files...
-# [vim-sensible](https://github.com/tpope/vim-sensible)
-mkdir -p ~/.local/share/vim/{swap,backup,undo,sessions}
+# Create dir for Vim backup, undo and session  files
+mkdir -p ~/.local/share/vim/{backup,undo,sessions}
 
 # Setup all Vim plugins - can also be used for bundle updates
 vim -u ~/.vimrc.bundles +BundleInstall! +BundleClean +qa

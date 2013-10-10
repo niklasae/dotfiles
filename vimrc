@@ -142,7 +142,10 @@ set statusline+=%c,%l     "cursor column, cursor line
 set statusline+=\ %L   "/total lines
 set statusline+=\ %P    "percent through file
 
-" Undo - is actually set in vim-sensible...
+" backup/swap/undo - used to exist in vim-sensible
+set noswapfile  " do not store swap files
+set backupdir=~/.local/share/vim/backup
+set backup
 set undodir=~/.local/share/vim/undo
 set undofile
 set undolevels=1000  "maximum number of changes that can be undone
