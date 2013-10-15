@@ -74,8 +74,8 @@ fi
 # Needs to be set for AWS RDS CLI
 export JAVA_HOME=/usr/lib/jvm/default-java
 export JRE_HOME=$JAVA_HOME/jre
-[[ -d "$JAVA_HOME" ]] && PATH="$PATH:$JAVA_HOME/bin"
 [[ -d "$JRE_HOME" ]] && PATH="$PATH:$JRE_HOME/bin"
+[[ -d "$JAVA_HOME" ]] && PATH="$PATH:$JAVA_HOME/bin"
 
 
 ### node.js
