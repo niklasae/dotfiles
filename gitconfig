@@ -6,11 +6,15 @@
   st = status
 
 [user]
-        name = Niklas A Emanuelsson
-        email = n.emanuelsson@gmail.com
+  name = Niklas A Emanuelsson
+  email = n.emanuelsson@gmail.com
+
 [color]
     ui = true
+
 [github]
+  user = niklasae
+
 	user = niklasae
 [push]
 	default = simple
