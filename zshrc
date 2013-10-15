@@ -142,4 +142,4 @@ alias kse="setxkbmap se"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 ### Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.rvm/bin:$PATH"
