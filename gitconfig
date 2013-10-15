@@ -15,6 +15,19 @@
 [github]
   user = niklasae
 
-	user = niklasae
+
 [push]
+  default = simple
+
+[merge]
+  tool = vimdiff
+  guitool = gvimdiff
+
+[diff]
+  tool = vimdiff
+  guitool = gvimdiff
+
+[mergetool]
+  prompt = false
+
 	default = simple
