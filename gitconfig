@@ -1,3 +1,10 @@
+[alias]
+  co = checkout
+  ci = commit
+  df = diff
+  dt = difftool
+  st = status
+
 [user]
         name = Niklas A Emanuelsson
         email = n.emanuelsson@gmail.com
