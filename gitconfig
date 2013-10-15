@@ -30,4 +30,5 @@
 [mergetool]
   prompt = false
 
-	default = simple
+[difftool]
+  prompt = false
