@@ -6,11 +6,11 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " Install plugins using the following syntax
-" 
+"
 "   * vim-script repos - Bundle 'Colour-Sampler-Pack'
 "   * github repos     - Bundle 'altercation/vim-colors-solarized'
 "   * non github repos - Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
@@ -65,17 +65,16 @@ Bundle 'mikewest/vimroom'
 Bundle 'nelstrom/vim-visual-star-search'
 
 
-" ~~~ CoffeeScript/JavaScript ~~~ 
+" ~~~ CoffeeScript/JavaScript ~~~
 Bundle 'kchmck/vim-coffee-script'
 
-" ~~~ CSS/LESS ~~~ 
+" ~~~ CSS/LESS ~~~
 Bundle 'skammer/vim-css-color'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
 
 " ~~~ HTML ~~~
-" sparkup insted of zencoding
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'mattn/emmet-vim'
 Bundle 'Jinja'
 
 " ~~~ PHP ~~~

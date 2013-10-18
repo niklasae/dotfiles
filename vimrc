@@ -37,6 +37,28 @@ nnoremap <Leader>cc :CoffeeCompile vertical<CR>
 nnoremap <Leader>cl :CoffeeLint<CR>
 nnoremap <Leader>cr :CoffeeRun<CR>
 
+" Emmet
+let g:user_emmet_leader_key = '<c-e>'
+let g:user_emmet_settings = {
+\    'html' : {
+\        'extends' : 'html',
+\        'indentation' : '    ',
+\    },
+\    'htmldjango' : {
+\        'extends' : 'html',
+\    },
+\    'htmljinja' : {
+\        'extends' : 'html',
+\    },
+\    'jinja' : {
+\        'extends' : 'html',
+\    },
+\    'php' : {
+\        'extends' : 'html',
+\        'filters' : 'c',
+\    },
+\}
+
 " Gundo - useful undo-tree
 nnoremap <Leader>gu :GundoToggle<CR>
 
