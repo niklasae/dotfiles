@@ -63,7 +63,11 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'mikewest/vimroom'
 " Search selection in visual mode (*/#)
 Bundle 'nelstrom/vim-visual-star-search'
-
+" Snipmate and dependencies (vim-addon-mw-utils, tlib_vim)
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 
 " ~~~ CoffeeScript/JavaScript ~~~
 Bundle 'kchmck/vim-coffee-script'
