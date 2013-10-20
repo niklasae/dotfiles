@@ -5,12 +5,15 @@
   dt = difftool
   st = status
 
-[user]
-  name = Niklas A Emanuelsson
-  email = n.emanuelsson@gmail.com
+[core]
+    excludesfile = ~/.gitignore
 
 [color]
     ui = true
+
+[user]
+  name = Niklas A Emanuelsson
+  email = n.emanuelsson@gmail.com
 
 [github]
   user = niklasae

@@ -1,0 +1,38 @@
+#
+# Global gitignore file
+#
+
+# ~~~ OS ~~~
+
+# Linux
+# https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
+#.*
+#!.gitignore
+*~
+
+# OSX
+# https://github.com/github/gitignore/blob/master/Global/OSX.gitignore
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+# Thumbnails
+._*
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# ~~~ Editors ~~~
+
+# SublimeText
+# https://github.com/github/gitignore/blob/master/Global/SublimeText.gitignore
+*.sublime-workspace
+
+# Vim
+# https://github.com/github/gitignore/blob/master/Global/vim.gitignore
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
