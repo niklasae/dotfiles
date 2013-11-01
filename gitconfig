@@ -4,6 +4,7 @@
   df = diff
   dt = difftool
   st = status
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
 
 [core]
     excludesfile = ~/.gitignore
