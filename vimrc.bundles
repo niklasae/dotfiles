@@ -68,6 +68,8 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
+" Support project wide editor config (editorconfig.org)
+Bundle "editorconfig/editorconfig-vim"
 
 " ~~~ CoffeeScript/JavaScript ~~~
 Bundle 'kchmck/vim-coffee-script'
