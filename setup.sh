@@ -16,8 +16,10 @@ git submodule update
 
 # Setup symbolic links
 ln -s "$DIR/bin" ~/.bin
+ln -s "$DIR/coffeelint.json" ~/coffeelint.json
 ln -s "$DIR/config/pep8" ~/.config/pep8
 ln -s "$DIR/config/flake8" ~/.config/flake8
+ln -s "$DIR/git" ~/.git
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/gitignore" ~/.gitignore
 ln -s "$DIR/gvimrc" ~/.gvimrc
