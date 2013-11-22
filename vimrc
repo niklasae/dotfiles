@@ -33,9 +33,12 @@ nnoremap <Leader>a :tab split<CR>:Ack ""<Left>
 nnoremap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
 " CoffeeScript / coffee-script
-nnoremap <Leader>cc :CoffeeCompile vertical<CR>
+nnoremap <Leader>cc :CoffeeCompile<CR>
 nnoremap <Leader>cl :CoffeeLint<CR>
 nnoremap <Leader>cr :CoffeeRun<CR>
+let coffee_compile_vert = 1
+let coffee_run_vert = 1
+let coffee_watch_vert = 1
 
 " Emmet
 let g:user_emmet_leader_key = '<c-e>'
