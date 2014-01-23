@@ -137,7 +137,8 @@ nnoremap <Leader>r :TagbarToggle<CR>
 map <Leader>td :TaskList<CR>
 
 " Ingnore for search - CtrlP
-:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**,**/node_modules/**
+:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**,**/node_modules/**,**/bower_components/**
+
 
 
 " -------------------------------------------------- 
