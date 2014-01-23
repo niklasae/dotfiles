@@ -37,5 +37,10 @@ mkdir -p ~/.local/share/vim/{backup,undo,sessions}
 # Setup all Vim plugins - can also be used for bundle updates
 vim -u ~/.vimrc.bundles +BundleInstall! +BundleClean +qa
 
+# Setup Tern for Vim (JavaScript)
+if [[ -d ~/.vim/bundle/tern_for_vim ]]; then
+    cd ~/.vim/bundle/tern_for_vim && npm install
+fi
+
 # Go back to dir we came from
 cd $calling_dir

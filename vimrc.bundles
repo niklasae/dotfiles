@@ -73,6 +73,7 @@ Bundle "editorconfig/editorconfig-vim"
 
 " ~~~ CoffeeScript/JavaScript ~~~
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'marijnh/tern_for_vim'
 
 " ~~~ CSS/LESS ~~~
 Bundle 'skammer/vim-css-color'
