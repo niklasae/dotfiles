@@ -246,7 +246,7 @@ noremap <Leader>do :noautocmd vimgrep /\(TODO\)\|\(FIXME\)\|\(XXX\)/j **/*.*<CR>
 noremap <Leader>* *N
 
 " Save file with root permissions (inspired by `$ sudo !!`)
-cmap w!! w !sudo tee >/dev/null %
+cmap w!! %!sudo tee >/dev/null %
 
 
 " -------------------------------------------------- 
