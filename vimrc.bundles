@@ -41,6 +41,8 @@ Bundle 'Raimondi/delimitMate'
 " Bundle 'justincampbell/vim-eighties'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'FuzzyFinder'
+" Gist
+Bundle 'mattn/gist-vim'
 " Nice and useful undotree
 Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
