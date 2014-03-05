@@ -62,7 +62,15 @@ let g:user_emmet_settings = {
 \    },
 \}
 
-" Githuib Gist
+" GitGutter
+" Only use when I say
+let g:gitgutter_enabled = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_realtime = 0
+let g:gitgutter_eager = 0
+
+
+" Github Gist
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
