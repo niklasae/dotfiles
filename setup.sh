@@ -15,6 +15,7 @@ git submodule init
 git submodule update
 
 # Setup symbolic links
+# Should check if they already exist and in that case unlink or delete
 ln -s "$DIR/bin" ~/.bin
 ln -s "$DIR/coffeelint.json" ~/coffeelint.json
 ln -s "$DIR/config/pep8" ~/.config/pep8
