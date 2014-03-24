@@ -28,7 +28,7 @@ select os in Ubuntu Other
 do
     case $os in
         Ubuntu )
-            sudo aptitude install -y exuberant-ctags
+            sudo apt-get install -y exuberant-ctags
             break;;
         Other )
             echo "You probably want to unlink the default phantomjs in ~/.bin..."
