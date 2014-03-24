@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#
+# turn track pad off and on
+# takes args 0 for off and 1 for on
+#
+# references that helped (can't find the original):
+# https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1103594
+# https://bugs.launchpad.net/ubuntu/+source/xserver-xorg-input-synaptics/+bug/1092623
+#
+# get device id of Cypress trackpad and disable or enable it
+
+device=`xinput list | grep CyPS | sed -e 's/^.*id=\([0-9][0-9]*\).*$/\1/'`
+xinput set-prop $device "Device Enabled" $1
