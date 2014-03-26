@@ -88,12 +88,12 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 
 " Jedi
 " Really only using defaults, but want to keep track of anyway
-let g:jedi#goto_command = "<Leader>g"
-let g:jedi#get_definition_command = "<Leader>d"
-let g:jedi#pydoc = "K"
+let g:jedi#goto_assignments_command = "<Leader>g"
+let g:jedi#goto_definitions_command = "<Leader>d"
+let g:jedi#documentation_command = "K"
 let g:jedi#rename_command = "<Leader>rnc"
-let g:jedi#related_names_command = "<Leader>rnn"
-let g:jedi#autocompletion_command = "<C-Space>"
+let g:jedi#usages_command = "<Leader>rnn"
+let g:jedi#completions_command = "<C-Space>"
 
 " LESS and CSS
 nnoremap <Leader>lc :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
