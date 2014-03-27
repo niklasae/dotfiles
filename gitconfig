@@ -19,7 +19,6 @@
 [github]
   user = niklasae
 
-
 [push]
   default = simple
 
@@ -36,3 +35,6 @@
 
 [difftool]
   prompt = false
+
+[heroku]
+  account = personal
