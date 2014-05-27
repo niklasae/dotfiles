@@ -39,7 +39,6 @@ Bundle 'Raimondi/delimitMate'
 " Bundle 'Lokaltog/vim-easymotion'
 " Git
 Bundle 'tpope/vim-fugitive'
-Bundle 'aghareza/vim-gitgrep'
 Bundle 'airblade/vim-gitgutter'
 "Bundle 'FuzzyFinder'
 " Gist
