@@ -47,6 +47,8 @@ Bundle 'mattn/gist-vim'
 " Nice and useful undotree
 Bundle 'sjl/gundo.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+" Align text
+Bundle 'godlygeek/tabular'
 "Bundle 'L9'
 Bundle 'mru.vim'
 " Sublime Text style multi-cursor select and edit
@@ -91,7 +93,7 @@ Bundle 'Jinja'
 " I know, I don't really want to, but I have too...
 Bundle 'shawncplus/phpcomplete.vim'
 
-" ~~~ python ~~~
+" ~~~ Python ~~~
 Bundle 'klen/python-mode'
 " Jedi code- navigation/completion - (pip install jedi)
 Bundle 'davidhalter/jedi-vim'
