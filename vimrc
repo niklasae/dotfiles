@@ -254,7 +254,8 @@ nnoremap <CR> :noh<CR><CR>
 " -------------------------------------------------- 
 " show all TODO/FIXME/XXX in quickfix window
 " noremap <Leader>do :noautocmd vimgrep /TODO/j **/*.*<CR>:cw<CR>
-noremap <Leader>do :noautocmd vimgrep /\(TODO\)\|\(FIXME\)\|\(XXX\)/j **/*.*<CR>:cw<CR>
+" noremap <Leader>do :noautocmd vimgrep /\(TODO\|FIXME\|XXX\)/j **/*.*<CR>:cw<CR>
+noremap <Leader>do :Ggrep \( -e TODO -e FIXME -e XXX \)<CR>
 
 " Find occurences, but stay put... to highlight all...
 noremap <Leader>* *N
