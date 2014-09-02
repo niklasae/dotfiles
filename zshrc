@@ -131,9 +131,8 @@ export AWS_RDS_HOME="$HOME/Software/RDSCli"
 [[ -d "$AWS_RDS_HOME" ]] && PATH="$AWS_RDS_HOME/bin/:$PATH"
 
 
-### aliases
-alias kgb="setxkbmap gb"
-alias kse="setxkbmap se"
+# aliases
+[[ -f ~/.aliases ]] && source ~/.aliases
 
 # Other...
 # ~~~~~~~~

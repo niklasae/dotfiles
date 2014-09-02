@@ -17,6 +17,7 @@ git submodule update
 # Setup symbolic links
 # Should check if they already exist and in that case unlink or delete
 ln -s "$DIR/bin" ~/.bin
+ln -s "$DIR/aliases" ~/.aliases
 ln -s "$DIR/coffeelint.json" ~/coffeelint.json
 ln -s "$DIR/config/pep8" ~/.config/pep8
 ln -s "$DIR/config/flake8" ~/.config/flake8
