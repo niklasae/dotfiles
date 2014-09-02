@@ -53,6 +53,8 @@ Bundle 'godlygeek/tabular'
 Bundle 'mru.vim'
 " Sublime Text style multi-cursor select and edit
 Bundle 'terryma/vim-multiple-cursors'
+" Swap/exchange lines
+Bundle 'tommcdo/vim-exchange'
 Bundle 'scrooloose/nerdtree'
 " :Qargs command - populate the argument list from the files in the quickfix list
 Bundle 'nelstrom/vim-qargs'
