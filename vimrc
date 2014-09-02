@@ -159,6 +159,11 @@ map <Leader>td :TaskList<CR>
 " General options
 " -------------------------------------------------- 
 
+" Events triggering auto check if buffers changed outside of Vim
+au CursorHold * checktime
+au WinEnter * checktime
+au BufWinEnter * checktime
+
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
 
 " Indentation
