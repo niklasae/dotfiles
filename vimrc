@@ -166,6 +166,11 @@ au BufWinEnter * checktime
 
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
 
+" Get path/filename
+:let @+ = expand("%")  " relative path
+:let @+ = expand("%:p")  " full path
+:let @+ = expand("%:t")  " just filename
+
 " Indentation
 set tabstop=4
 set softtabstop=4
