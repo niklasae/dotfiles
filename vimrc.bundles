@@ -27,6 +27,7 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'lorry-lee/vim-ayumi'
 Bundle 'shawncplus/skittles_berry'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'trusktr/seti.vim'
 
 " ~~~ Color picker ~~~
 Bundle 'ScrollColors'
