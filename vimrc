@@ -151,8 +151,7 @@ nnoremap <Leader>r :TagbarToggle<CR>
 map <Leader>td :TaskList<CR>
 
 " Ingnore for search - CtrlP
-:set wildignore+=*.class,**/target/**,**/*env.CATALINA_HOME*/**,*.pyc,.git,**/gen/**,**/node_modules/**,**/bower_components/**
-
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']  " Ignore files in .gitignore
 
 
 " -------------------------------------------------- 
@@ -200,6 +199,17 @@ set undodir=~/.local/share/vim/undo
 set undofile
 set undolevels=1000  "maximum number of changes that can be undone
 set undoreload=10000  "maximum number lines to save for undo on a buffer reload
+
+" Pattern to ignore when expanding wildcards (CtrlP...)
+:set wildignore+=.git
+:set wildignore+=*.class
+:set wildignore+=*.pyc
+:set wildignore+=**/bower_components/**
+:set wildignore+=**/*env.CATALINA_HOME*/**
+:set wildignore+=**/gen/**
+:set wildignore+=**/node_modules/**
+:set wildignore+=**/target/**
+
 
 " -------------------------------------------------- 
 " Navigation
