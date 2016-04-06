@@ -1,0 +1,7 @@
+#!/usr/bin/env/ bash
+#
+# Make the pdf smaller
+#
+cp $1 $1.bak
+pdf2ps $1 $1.ps
+ps2pdf $1.ps $1
