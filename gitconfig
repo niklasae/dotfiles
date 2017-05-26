@@ -37,4 +37,4 @@
   prompt = false
 
 [heroku]
-  account = personal
+#  account = personal
