@@ -9,10 +9,8 @@ calling_dir=$PWD
 # Get dotfiles directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Init submodules
-cd $DIR
-git submodule init
-git submodule update
+# Clone Vundle for vim
+git clone https://github.com/VundleVim/Vundle.vim.git "$DIR/vim/bundle/Vundle.vim"
 
 # Setup symbolic links
 # Should check if they already exist and in that case unlink or delete

@@ -2,12 +2,11 @@
 set nocompatible
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+" let Vundle manage Vundle, required!
+Bundle 'VundleVim/Vundle.vim'
 
 " Install plugins using the following syntax
 "
@@ -37,7 +36,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'tpope/vim-commentary'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
-" Bundle 'Lokaltog/vim-easymotion'
+"Bundle 'Lokaltog/vim-easymotion'
 " Git
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
@@ -68,7 +67,7 @@ Bundle 'majutsushi/tagbar'
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
 Bundle 'tpope/vim-unimpaired'
 " VimRoom - writeroom clone
-Bundle 'mikewest/vimroom'
+"Bundle 'mikewest/vimroom'
 " Search selection in visual mode (*/#)
 Bundle 'nelstrom/vim-visual-star-search'
 " Snipmate and dependencies (vim-addon-mw-utils, tlib_vim)
@@ -94,7 +93,7 @@ Bundle 'Jinja'
 
 " ~~~ PHP ~~~
 " I know, I don't really want to, but I have too...
-Bundle 'shawncplus/phpcomplete.vim'
+"Bundle 'shawncplus/phpcomplete.vim'
 
 " ~~~ Python ~~~
 Bundle 'klen/python-mode'
