@@ -45,10 +45,9 @@ source $ZSH/oh-my-zsh.sh
 [[ -d "$HOME/.bin" ]] && PATH="$HOME/.bin/:$PATH"
 
 # # Powerline
-# [[ -d "$HOME/.local/bin" ]] && PATH="$HOME/.local/bin/:$PATH"
-# if [[ -r ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-#     source ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-# fi
+if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/share/powerline/bindings/zsh/powerline.zsh
+fi
 
 # # 256 colors
 # export TERM=xterm-256color
