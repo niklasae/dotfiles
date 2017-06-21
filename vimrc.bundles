@@ -108,4 +108,5 @@ Bundle 'davidhalter/jedi-vim'
 Bundle 'nginx.vim'
 
 
+call vundle#end()
 filetype plugin indent on
