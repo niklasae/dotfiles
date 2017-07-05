@@ -336,4 +336,5 @@ set t_Co=256
 
 " colorscheme github
 " colorscheme vividchalk
-colorscheme candycode
+" colorscheme candycode
+colorscheme Monokai
