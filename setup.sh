@@ -26,7 +26,8 @@ ln -s "$DIR/gvimrc" ~/.gvimrc
 sudo rm -rf ~/.pip && ln -s "$DIR/pip" ~/.pip
 ln -s "$DIR/pomorc" ~/.pomorc
 ln -s "$DIR/pylintrc" ~/.pylintrc
-ln -s "$DIR/tmux.conf" ~/tmux.conf
+ln -s "$DIR/tmux.conf" ~/.tmux.conf
+ln -s "$DIR/tmux" ~/.tmux
 ln -s "$DIR/vim" ~/.vim
 ln -s "$DIR/vimrc" ~/.vimrc
 ln -s "$DIR/vimrc.bundles" ~/.vimrc.bundles
