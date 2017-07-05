@@ -99,6 +99,9 @@ Bundle 'Jinja'
 Bundle 'klen/python-mode'
 " Jedi code- navigation/completion - (pip install jedi)
 Bundle 'davidhalter/jedi-vim'
+" Brings virtualenvs into vim and helps Jedi
+" https://github.com/davidhalter/jedi-vim/issues/685#issuecomment-291632671
+Bundle 'jmcantrell/vim-virtualenv'
 
 
 " ~~~~ Productivity ~~~

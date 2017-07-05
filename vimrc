@@ -95,6 +95,11 @@ let g:jedi#rename_command = "<Leader>rnc"
 let g:jedi#usages_command = "<Leader>rnn"
 let g:jedi#completions_command = "<C-Space>"
 
+" Virtualenv
+" Autodect activated virtualenvs to help Jedi
+" https://github.com/davidhalter/jedi-vim/issues/685#issuecomment-291632671
+let g:virtualenv_auto_activate = 1
+
 " LESS and CSS
 nnoremap <Leader>lc :w <BAR> !lessc % > %:t:r.css<CR><space>  " Compile LESS to CSS
 " Highlight and match vendor specific prefixes
