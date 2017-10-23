@@ -140,14 +140,6 @@ let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabMappingForward='<C-space>'
 " let g:SuperTabMappingBackward='<s-C-space>'
 
-" Syntastic
-let g:syntastic_check_on_open=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_loc_list_height=10
-" Enable active linting and disable lint for some types(:SyntasticCheck)
-" python - python-mode linter
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['python'] }
-
 " Tagbar
 let g:tagbar_userarrows=1
 nnoremap <Leader>r :TagbarToggle<CR>

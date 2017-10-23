@@ -62,7 +62,7 @@ Bundle 'tpope/vim-sensible'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-surround'
 " Multi lang syntax checker and linting
-Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 Bundle 'majutsushi/tagbar'
 "Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
 Bundle 'tpope/vim-unimpaired'
