@@ -15,7 +15,7 @@ git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # vim
 sudo pip install -U jedi
 sudo pip install -U pyflakes
-sudo pip install -U pylint 
+sudo pip install -U pylint
 
 npm install -g coffee-script
 npm install -g coffeelint

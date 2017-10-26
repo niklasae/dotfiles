@@ -32,6 +32,11 @@ set rtp+=~/.vim/after
 nnoremap <Leader>a :tab split<CR>:Ack ""<Left>
 nnoremap <Leader>A :tab split<CR>:Ack <C-r><C-w><CR>
 
+" ALE
+let g:ale_set_loclist = 1
+let g:ale_open_list = 1
+let g:ale_echo_msg_format = '[%linter%] %s'
+
 " CoffeeScript / coffee-script
 nnoremap <Leader>cc :CoffeeCompile<CR>
 nnoremap <Leader>cl :CoffeeLint<CR>
