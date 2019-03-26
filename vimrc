@@ -141,6 +141,23 @@ augroup sparkup_types
   autocmd FileType mustache,htmldjango,htmljinja runtime! bundle/sparkup/vim/ftplugin/html/sparkup.vim
 augroup END
 
+" Startify
+let g:startify_ascii = [
+    \ '__________                                     __   ',
+    \ '\______   \ ____   ____________   ____   _____/  |_ ',
+    \ ' |       _// __ \ /  ___/\____ \_/ __ \_/ ___\   __\',
+    \ ' |    |   \  ___/ \___ \ |  |_> >  ___/\  \___|  |  ',
+    \ ' |____|_  /\___  >____  >|   __/ \___  >\___  >__|  ',
+    \ '        \/     \/     \/ |__|        \/     \/      ',
+    \ ''
+    \]
+let g:startify_custom_header =
+    \ 'map(g:startify_ascii + startify#fortune#boxed(), "\"   \".v:val")'
+let g:startify_bookmarks = [
+    \{'d': '~/Code/niklasae/dotfiles'},
+    \]
+let g:startify_fortune_use_unicode = 1
+
 " SuperTab - <TAB> completion
 let g:SuperTabDefaultCompletionType="context"
 " let g:SuperTabMappingForward='<C-space>'
