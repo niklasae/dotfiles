@@ -110,6 +110,7 @@ Bundle 'jmcantrell/vim-virtualenv'
 " ~~~ Other... ~~~
 Bundle 'nginx.vim'
 Bundle 'mhinz/vim-startify'
+Bundle 'wakatime/vim-wakatime'
 
 call vundle#end()
 filetype plugin indent on
