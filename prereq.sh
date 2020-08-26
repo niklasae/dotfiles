@@ -10,18 +10,16 @@ calling_dir=$PWD
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # zsh
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+sudo apt install -y zsh
+chsh -s `which zsh`
 
 # vim
-sudo pip install -U jedi
-sudo pip install -U pyflakes
-sudo pip install -U pylint
+sudo pip3 install -U jedi
+sudo pip3 install -U pyflakes
+sudo pip3 install -U pylint
 
-npm install -g coffee-script
-npm install -g coffeelint
-
-# pomo - local version of pomo (depends on libnotify...)
-gem install libnotify pomo
+sudo npm install -g coffeescript
+sudo npm install -g coffeelint
 
 echo "Which OS are you on?"
 select os in Ubuntu Other
