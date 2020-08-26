@@ -26,7 +26,9 @@ ln -s "$DIR/gvimrc" ~/.gvimrc
 sudo rm -rf ~/.pip && ln -s "$DIR/pip" ~/.pip
 ln -s "$DIR/pomorc" ~/.pomorc
 ln -s "$DIR/pylintrc" ~/.pylintrc
-ln -s "$DIR/tmux.conf" ~/.tmux.conf
+git clone https://github.com/gpakosz/.tmux.git "$DIR/oh-my-tmux"
+ln -s "$DIR/oh-my-tmux/tmux.conf" ~/.tmux.conf
+ln -s "$DIR/tmux.conf.local" ~/.tmux.conf.local
 ln -s "$DIR/tmux" ~/.tmux
 ln -s "$DIR/vim" ~/.vim
 ln -s "$DIR/vimrc" ~/.vimrc
@@ -43,6 +45,9 @@ vim -u ~/.vimrc.bundles +BundleInstall! +BundleClean +qa
 if [[ -d ~/.vim/bundle/tern_for_vim ]]; then
     cd ~/.vim/bundle/tern_for_vim && npm install
 fi
+
+# Setup Oh My Zsh
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Go back to dir we came from
 cd $calling_dir
