@@ -185,10 +185,10 @@ au BufWinEnter * checktime
 
 set clipboard=unnamedplus " set system clipboard to "+ - see :reg
 
-" Get path/filename
-:let @+ = expand("%")  " relative path
-:let @+ = expand("%:p")  " full path
-:let @+ = expand("%:t")  " just filename
+" Get path/filename - https://vim.fandom.com/wiki/Copy_filename_to_clipboard
+nmap <Leader>cs :let @+ = expand("%")<CR>  " relative path
+nmap <Leader>cl :let @+ = expand("%:p")<CR>  " full path
+nmap <Leader>cn :let @+ = expand("%:t")<CR>  " just filename
 
 " Indentation
 set tabstop=4

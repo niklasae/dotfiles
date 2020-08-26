@@ -6,111 +6,111 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required!
-Bundle 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Install plugins using the following syntax
 "
-"   * vim-script repos - Bundle 'Colour-Sampler-Pack'
-"   * github repos     - Bundle 'altercation/vim-colors-solarized'
-"   * non github repos - Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
+"   * vim-script repos - Plugin 'Colour-Sampler-Pack'
+"   * github repos     - Plugin 'altercation/vim-colors-solarized'
+"   * non github repos - Plugin 'hg://hg@bitbucket.org/abudden/taghighlight'
 "
 " Clean, Install and Update all plugins by running:
 "
-"   $ vim -u ~/.vimrc.bundles +BundleClean +BundleInstall! +qa
+"   $ vim -u ~/.vimrc.bundles +PluginClean +BundleInstall! +qa
 "
 
 " ~~~ Color-packs ~~~
-Bundle 'flazz/vim-colorschemes'
+Plugin 'flazz/vim-colorschemes'
 
 " ~~~ Colors ~~~
-Bundle 'lorry-lee/vim-ayumi'
-Bundle 'shawncplus/skittles_berry'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'trusktr/seti.vim'
+Plugin 'lorry-lee/vim-ayumi'
+Plugin 'shawncplus/skittles_berry'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'trusktr/seti.vim'
 
 " ~~~ Color picker ~~~
-Bundle 'ScrollColors'
+Plugin 'ScrollColors'
 
 " ~~~ General ~~~
-Bundle 'mileszs/ack.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Raimondi/delimitMate'
-"Bundle 'Lokaltog/vim-easymotion'
+Plugin 'mileszs/ack.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+"Plugin 'Lokaltog/vim-easymotion'
 " Git
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-"Bundle 'FuzzyFinder'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+"Plugin 'FuzzyFinder'
 " Gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 " Nice and useful undotree
-Bundle 'sjl/gundo.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'sjl/gundo.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 " Align text
-Bundle 'godlygeek/tabular'
-"Bundle 'L9'
-Bundle 'mru.vim'
+Plugin 'godlygeek/tabular'
+"Plugin 'L9'
+Plugin 'mru.vim'
 " Sublime Text style multi-cursor select and edit
-Bundle 'terryma/vim-multiple-cursors'
+Plugin 'terryma/vim-multiple-cursors'
 " Swap/exchange lines
-Bundle 'tommcdo/vim-exchange'
-Bundle 'scrooloose/nerdtree'
+Plugin 'tommcdo/vim-exchange'
+Plugin 'scrooloose/nerdtree'
 " :Qargs command - populate the argument list from the files in the quickfix list
-Bundle 'nelstrom/vim-qargs'
-Bundle 'tpope/vim-sensible'
-Bundle 'ervandew/supertab'
-Bundle 'tpope/vim-surround'
+Plugin 'nelstrom/vim-qargs'
+Plugin 'tpope/vim-sensible'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-surround'
 " Multi lang syntax checker and linting
-Bundle 'w0rp/ale'
-Bundle 'majutsushi/tagbar'
-"Bundle 'hg://hg@bitbucket.org/abudden/taghighlight'
-Bundle 'tpope/vim-unimpaired'
+Plugin 'w0rp/ale'
+Plugin 'majutsushi/tagbar'
+"Plugin 'hg://hg@bitbucket.org/abudden/taghighlight'
+Plugin 'tpope/vim-unimpaired'
 " VimRoom - writeroom clone
-"Bundle 'mikewest/vimroom'
+"Plugin 'mikewest/vimroom'
 " Search selection in visual mode (*/#)
-Bundle 'nelstrom/vim-visual-star-search'
+Plugin 'nelstrom/vim-visual-star-search'
 " Snipmate and dependencies (vim-addon-mw-utils, tlib_vim)
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 " Support project wide editor config (editorconfig.org)
-Bundle "editorconfig/editorconfig-vim"
+Plugin 'editorconfig/editorconfig-vim'
 
 " ~~~ CoffeeScript/JavaScript ~~~
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'marijnh/tern_for_vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'marijnh/tern_for_vim'
 
 " ~~~ CSS/LESS ~~~
-Bundle 'skammer/vim-css-color'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'groenewege/vim-less'
+Plugin 'skammer/vim-css-color'
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'groenewege/vim-less'
 
 " ~~~ HTML ~~~
-Bundle 'mattn/emmet-vim'
-Bundle 'Jinja'
+Plugin 'mattn/emmet-vim'
+Plugin 'Jinja'
 
 " ~~~ PHP ~~~
 " I know, I don't really want to, but I have too...
-"Bundle 'shawncplus/phpcomplete.vim'
+"Plugin 'shawncplus/phpcomplete.vim'
 
 " ~~~ Python ~~~
-Bundle 'klen/python-mode'
+Plugin 'klen/python-mode'
 " Jedi code- navigation/completion - (pip install jedi)
-Bundle 'davidhalter/jedi-vim'
+Plugin 'davidhalter/jedi-vim'
 " Brings virtualenvs into vim and helps Jedi
 " https://github.com/davidhalter/jedi-vim/issues/685#issuecomment-291632671
-Bundle 'jmcantrell/vim-virtualenv'
+Plugin 'jmcantrell/vim-virtualenv'
 
 
 " ~~~~ Productivity ~~~
 
 
 " ~~~ Other... ~~~
-Bundle 'nginx.vim'
-Bundle 'mhinz/vim-startify'
-Bundle 'wakatime/vim-wakatime'
+Plugin 'nginx.vim'
+Plugin 'mhinz/vim-startify'
+Plugin 'wakatime/vim-wakatime'
 
 call vundle#end()
 filetype plugin indent on
