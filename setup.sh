@@ -12,6 +12,14 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # Clone Vundle for vim
 git clone https://github.com/VundleVim/Vundle.vim.git "$DIR/vim/bundle/Vundle.vim"
 
+# Setup vim-plug for NeoVim -- https://github.com/junegunn/vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+# Install Nerd fonts
+wget https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DroidSansMono.zip
+unzip DroidSansMono.zip -d ~/.fonts
+fc-cache -fv
+
 # Setup symbolic links
 # Should check if they already exist and in that case unlink or delete
 ln -s "$DIR/bin" ~/.bin
@@ -23,6 +31,9 @@ ln -s "$DIR/git" ~/.git
 ln -s "$DIR/gitconfig" ~/.gitconfig
 ln -s "$DIR/gitignore" ~/.gitignore
 ln -s "$DIR/gvimrc" ~/.gvimrc
+ln -s "$DIR/nvim/init.vim" ~/.config/nvim/init.vim
+ln -s "$DIR/nvim/init-plugs.vim" ~/.config/nvim/init-plugs.vim
+ln -s "$DIR/nvim/conf" ~/.config/nvim/conf
 sudo rm -rf ~/.pip && ln -s "$DIR/pip" ~/.pip
 ln -s "$DIR/pomorc" ~/.pomorc
 ln -s "$DIR/pylintrc" ~/.pylintrc
