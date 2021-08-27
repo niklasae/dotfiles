@@ -289,6 +289,10 @@ nnoremap <Leader>mks :mks! ~/.local/share/vim/sessions/
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
+" Zoom/Un-zoom
+noremap <Leader>z <C-W>\|<C-W>_  " zoom
+noremap <Leader>zz <C-W>=  " un-zoom
+
 " -------------------------------------------------- 
 " Trix
 " -------------------------------------------------- 
@@ -299,6 +303,7 @@ noremap <Leader>do :Ggrep \( -e TODO -e FIXME -e XXX \)<CR>
 command! -nargs=1 GGrep Ggrep <q-args> -- 
     \ './*'
     \ ':!*/migrations/*'
+    \ ':!*/south_migrations/*'
     \ ':!*/static/js/bower_components/*'
     \ ':!*/LC_MESSAGES/*'
 

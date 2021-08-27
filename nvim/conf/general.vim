@@ -35,3 +35,7 @@ set spelllang=en_gb  " I like British English...
 
 " Unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
+
+" Zoom/Un-zoom
+noremap <Leader>z <C-W>\|<C-W>_  " zoom
+noremap <Leader>zz <C-W>=  " un-zoom
