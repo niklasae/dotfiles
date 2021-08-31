@@ -196,7 +196,9 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-set splitright  " Open splits to the right
+" Open splits to the below or to the right
+set splitbelow
+set splitright
 
 " Status Line
 "set statusline=%t       "tail of the filename
@@ -289,9 +291,9 @@ nnoremap <Leader>mks :mks! ~/.local/share/vim/sessions/
 " This unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
-" Zoom/Un-zoom
-noremap <Leader>z <C-W>\|<C-W>_  " zoom
-noremap <Leader>zz <C-W>=  " un-zoom
+" Zoom/Un-zoom -- Focus/Un-focus split
+noremap <Leader>z :NERDTreeClose<C-W>\|<C-W>_  " zoom
+noremap <Leader>zz :NERDTreeClose<C-W>=  " un-zoom
 
 " -------------------------------------------------- 
 " Trix

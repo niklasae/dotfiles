@@ -6,6 +6,10 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+" Open splits to the below or to the right
+set splitbelow
+set splitright
+
 " Fast escape
 inoremap jj <Esc>
 
@@ -36,6 +40,6 @@ set spelllang=en_gb  " I like British English...
 " Unsets the 'last search pattern' register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
-" Zoom/Un-zoom
-noremap <Leader>z <C-W>\|<C-W>_  " zoom
-noremap <Leader>zz <C-W>=  " un-zoom
+" Zoom/Un-zoom -- Focus/Un-focus split
+noremap <Leader>z :NERDTreeClose<C-W>\|<C-W>_  " zoom
+noremap <Leader>zz :NERDTreeClose<C-W>=  " un-zoom
