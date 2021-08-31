@@ -41,5 +41,5 @@ set spelllang=en_gb  " I like British English...
 nnoremap <CR> :noh<CR><CR>
 
 " Zoom/Un-zoom -- Focus/Un-focus split
-noremap <Leader>z :NERDTreeClose<C-W>\|<C-W>_  " zoom
-noremap <Leader>zz :NERDTreeClose<C-W>=  " un-zoom
+noremap <Leader>z :NERDTreeClose<CR><C-W>\|<C-W>_  " zoom
+noremap <Leader>zz :NERDTreeClose<CR><C-W>=  " un-zoom
