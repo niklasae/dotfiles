@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
