@@ -31,7 +31,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(fabric git pip python vagrant)
+plugins=(git kubectl kubectx k9s pip python)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -45,9 +45,9 @@ source $ZSH/oh-my-zsh.sh
 [[ -d "$HOME/.bin" ]] && PATH="$HOME/.bin/:$PATH"
 
 # # Powerline
-if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
+#if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+#    source /usr/share/powerline/bindings/zsh/powerline.zsh
+#fi
 
 # # 256 colors
 # export TERM=xterm-256color
@@ -71,10 +71,10 @@ fi
 
 ### java
 # Needs to be set for AWS RDS CLI
-export JAVA_HOME=/usr/lib/jvm/default-java
-export JRE_HOME=$JAVA_HOME/jre
-[[ -d "$JRE_HOME" ]] && PATH="$PATH:$JRE_HOME/bin"
-[[ -d "$JAVA_HOME" ]] && PATH="$PATH:$JAVA_HOME/bin"
+#export JAVA_HOME=/usr/lib/jvm/default-java
+#export JRE_HOME=$JAVA_HOME/jre
+#[[ -d "$JRE_HOME" ]] && PATH="$PATH:$JRE_HOME/bin"
+#[[ -d "$JAVA_HOME" ]] && PATH="$PATH:$JAVA_HOME/bin"
 
 
 ### node.js
@@ -90,44 +90,44 @@ export NVM_HOME="$HOME/.nvm"
 ### python
 
 # virtualenvwrapper
-[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
+# [[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
 
 
 ### ruby
 
 # rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 
 ### tools
 
 # autoenv (https://github.com/kennethreitz/autoenv).
 #[[ -s /usr/local/bin/activate.sh ]] && source /usr/local/bin/activate.sh
-[[ -s "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
+#[[ -s "$HOME/.autoenv/activate.sh" ]] && source "$HOME/.autoenv/activate.sh"
 
 # use_env / autoenv (https://github.com/kennethreitz/autoenv/wiki/Cookbook)
 # The use_env call below is a reusable command to activate/create a new Python
 # virtualenv, requiring only a single declarative line of code in your .env files.
 # It only performs an action if the requested virtualenv is not the current one.
-use_env() {
-  typeset venv
-  venv="$1"
-  if [[ "${VIRTUAL_ENV:t}" != "$venv" ]]; then
-    if workon | grep -q "$venv"; then
-      workon "$venv"
-    else
-      echo -n "Create virtualenv $venv now? (Yn) "
-      read answer
-      if [[ "$answer" == "Y" ]]; then
-        mkvirtualenv "$venv"
-      fi
-    fi
-  fi
-}
+#use_env() {
+#  typeset venv
+#  venv="$1"
+#  if [[ "${VIRTUAL_ENV:t}" != "$venv" ]]; then
+#    if workon | grep -q "$venv"; then
+#      workon "$venv"
+#    else
+#      echo -n "Create virtualenv $venv now? (Yn) "
+#      read answer
+#      if [[ "$answer" == "Y" ]]; then
+#        mkvirtualenv "$venv"
+#      fi
+#    fi
+#  fi
+#}
 
-# AWS RDS CLI
-export AWS_RDS_HOME="$HOME/Software/RDSCli"
-[[ -d "$AWS_RDS_HOME" ]] && PATH="$AWS_RDS_HOME/bin/:$PATH"
+## AWS RDS CLI
+#export AWS_RDS_HOME="$HOME/Software/RDSCli"
+#[[ -d "$AWS_RDS_HOME" ]] && PATH="$AWS_RDS_HOME/bin/:$PATH"
 
 
 # aliases
@@ -136,8 +136,15 @@ export AWS_RDS_HOME="$HOME/Software/RDSCli"
 # Other...
 # ~~~~~~~~
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+#### Added by the Heroku Toolbelt
+#export PATH="/usr/local/heroku/bin:$PATH"
+#
+#### Add RVM to PATH for scripting
+#export PATH="$HOME/.rvm/bin:$PATH"
 
-### Add RVM to PATH for scripting
-export PATH="$HOME/.rvm/bin:$PATH"
+
+export GITHUB_READ_PACKAGES_TOKEN="op://Private/GITHUB_READ_PACKAGES_TOKEN/token"
+
+# Set the editor to nvim
+export VISUAL="nvim"
+export EDITOR=$VISUAL
