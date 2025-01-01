@@ -17,6 +17,7 @@ chsh -s `which zsh`
 sudo pip3 install -U jedi
 sudo pip3 install -U pyflakes
 sudo pip3 install -U pylint
+sudo pip3 install -U isort
 
 sudo npm install -g coffeescript
 sudo npm install -g coffeelint
