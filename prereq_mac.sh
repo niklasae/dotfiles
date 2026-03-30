@@ -43,6 +43,7 @@ brew tap heroku/brew && brew install heroku
 brew install mas # Mac App Store apps
 brew install neovim
 brew install node
+brew install anomalyco/tap/opencode
 brew install pipx
 brew install ripgrep
 brew install wget
