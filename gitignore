@@ -31,7 +31,8 @@ Icon
 
 # Vim
 # https://github.com/github/gitignore/blob/master/Global/vim.gitignore
-*.s[a-w][a-z]
+# *.s[a-w][a-z]
+*.sw[a-p]
 *.un~
 Session.vim
 .netrwhist
