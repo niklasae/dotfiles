@@ -66,8 +66,10 @@ brew install kubectx
 brew install tfenv
 brw install terramate
 # Fonts needed for dotfiles/Neovim
-brew tap homebrew/cask-fonts
-brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
+# NerdFontsSymbolsOnly  # Only font needed for Kitty/Nvim
+brew install --cask font-symbols-only-nerd-font
+# brew tap homebrew/cask-fonts
+# brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
 
 # Mac App Store (mas)
 # $ mas search Xcode
