@@ -64,9 +64,17 @@ source $ZSH/oh-my-zsh.sh
 
 ### keybindings
 
+# Set bindings to be Vim-like
+bindkey -v
+bindkey -v
+bindkey -M viins '^r' history-incremental-search-backward
+bindkey -M vicmd '^r' history-incremental-search-backward
+# bindkey -e  # Default Emacs
+
 # history search
 #bindkey "^r" history-search-backward
 #bindkey "^R" history-search-forward
+bindkey '^r' history-incremental-search-backward
 
 
 ### java
@@ -144,7 +152,42 @@ export NVM_HOME="$HOME/.nvm"
 
 
 export GITHUB_READ_PACKAGES_TOKEN="op://Private/GITHUB_READ_PACKAGES_TOKEN/token"
+export GITHUB_TOKEN="op://Private/GITHUB_READ_PACKAGES_TOKEN/token"
+export GITHUB_PR_COUNT_TOKEN_JOBYLON="op://Private/jamyzutdyno6eslpoag5ayyyhq/JBL_PR_COUNT_KEY"
+export GITHUB_PR_COUNT_TOKEN_TRUSTCRUIT="op://Private/jamyzutdyno6eslpoag5ayyyhq/TC_PR_COUNT_KEY"
 
 # Set the editor to nvim
 export VISUAL="nvim"
 export EDITOR=$VISUAL
+
+# Created by `pipx` on 2024-05-31 12:31:26
+export PATH="$PATH:/Users/niklas/.local/bin"
+
+# mysqlclient
+# brew install pkg-config mysql-client
+export MYSQLCLIENT_DIR=$(brew --prefix mysql-client)
+export MYSQLCLIENT_CFLAGS="-I$MYSQLCLIENT_DIR/include/mysql/"
+export MYSQLCLIENT_LDFLAGS="-L$MYSQLCLIENT_DIR/lib -lmysqlclient"
+
+# pylibmc
+# brew install libmemcached
+# Make sure to export the following variables before `pip install`
+export LDFLAGS="-L$(brew --prefix libmemcached)/lib/"
+export CPPFLAGS="-I$(brew --prefix libmemcached)/include/"
+
+# mise
+eval "$(mise activate)"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/niklas/.antigravity/antigravity/bin:$PATH"
+
+# carapace
+autoload -U compinit && compinit
+export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
+zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
+source <(carapace _carapace)
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
