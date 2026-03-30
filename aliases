@@ -1,3 +1,14 @@
+# NVIM
+# Create virtual envs using uv
+alias nvim-pure="NVIM_APPNAME=nvim-pure nvim"
+alias nvim-ats="cd ~/Code/work/jbl-web && source .venv/bin/activate && uv pip sync reqs/dev.txt && nvim README.md"
+# alias nvim-emp="cd ~/Dropbox/Development/emp && source .venv/bin/activate && uv pip sync ~/Code/work/jbl-web/reqs/dev.txt && nvim"
+alias nvim-crm="cd ~/Code/work/jbl-crm && source .venv/bin/activate && uv pip sync requirements/local.txt && nvim README.md"
+
+alias wts='wt switch $(wt list --format json | jq -r ".[].branch" | fzf)'
+alias wtr='wt remove $(wt list --format json | jq -r ".[].branch" | fzf)'
+alias wtc='wt switch --create'
+
 # Keyboard lang
 alias kgb="setxkbmap gb"
 alias kse="setxkbmap se"
