@@ -40,7 +40,7 @@ brew install gcc # Needed for Neovim (LazyVim libstdc++)
 brew install git
 brew install git-gui
 brew tap heroku/brew && brew install heroku
-brew install mas # Mac Store Apps
+brew install mas # Mac App Store apps
 brew install neovim
 brew install node
 brew install pipx
