@@ -35,10 +35,12 @@ brew install --cask visual-studio-code
 brew install --cask whimsical
 
 # Brew packages
-brew install fzf # Needed for Neovim (LazyVim nvim-fzf)
-brew install gcc # Needed for Neovim (LazyVim libstdc++)
+brew install carapace # Auto-completion for the shell -
+brew install fzf      # Needed for Neovim (LazyVim nvim-fzf) and zoxide
+brew install gcc      # Needed for Neovim (LazyVim libstdc++)
 brew install git
 brew install git-gui
+brew install gron # Grep JSON output "fgrep" https://github.com/tomnomnom/gron
 brew tap heroku/brew && brew install heroku
 brew install mas # Mac App Store apps
 brew install neovim
@@ -46,15 +48,23 @@ brew install node
 brew install anomalyco/tap/opencode
 brew install pipx
 brew install ripgrep
+brew install uv
 brew install wget
+brew install zoxide
+# JBL ATS Dev
+brew install pkg-config mysql-client
+brew install libmemcached
 # AWS and k8s
 # Read docs on assume started docs
 # Read docs on AWS config/profiles
 # Check Jobylon wiki - https://app.archbee.com/docs/a_AuybsU7_SMi0ikVf7OW/oIa6DA8CUzHfCviaqxdiV)
 brew tap common-fate/granted && brew install granted
-brew k9s
-brew kubectl
-brew kubectx
+brew install k9s
+brew install kubectl
+brew install kubectx
+# Terraform
+brew install tfenv
+brw install terramate
 # Fonts needed for dotfiles/Neovim
 brew tap homebrew/cask-fonts
 brew search '/font-.*-nerd-font/' | awk '{ print $1 }' | xargs -I{} brew install --cask {} || true
