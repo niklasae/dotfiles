@@ -23,6 +23,8 @@ brew install --cask 1password-cli
 brew install --cask asana
 brew install --cask cleanshot
 brew install --cask dropbox
+brew install --cask jordanbaird-ice # Manage menue bar icons
+brew install --cask karabiner-elements
 brew install --cask libreoffice
 brew install --cask linear-linear
 brew install --cask mysqlworkbench
