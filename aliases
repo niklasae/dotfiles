@@ -26,3 +26,14 @@ alias tks='tmux kill-session -t'
 
 # Run jbl tests faster
 alias runtests="./manage.py test $1 --settings=jbl_web.settings.test"
+
+# Run pre-commit for all changes on branch
+pc-branch() {
+  git diff --name-only $(git merge-base HEAD origin/HEAD)..HEAD | xargs pre-commit run --files
+}
+
+
+# Run git diff filename on branch 
+gdnb() {
+  git diff --name-only $(git merge-base HEAD origin/HEAD)..HEAD
+}

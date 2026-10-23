@@ -7,7 +7,7 @@
 calling_dir=$PWD
 
 # Get dotfiles directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # Clone Vundle for vim
 #git clone https://github.com/VundleVim/Vundle.vim.git "$DIR/vim/bundle/Vundle.vim"

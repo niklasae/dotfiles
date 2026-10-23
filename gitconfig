@@ -38,3 +38,5 @@
 
 [heroku]
 #  account = personal
+[credential "https://git.heroku.com"]
+	helper = !heroku git:credentials

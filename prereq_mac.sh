@@ -21,7 +21,9 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 # Brew casks
 brew install --cask 1password-cli
 brew install --cask asana
+brew install --cask claude-code
 brew install --cask cleanshot
+brew install --cask codexbar
 brew install --cask dropbox
 brew install --cask jordanbaird-ice # Manage menue bar icons
 brew install --cask karabiner-elements
@@ -29,25 +31,34 @@ brew install --cask libreoffice
 brew install --cask linear-linear
 brew install --cask mysqlworkbench
 brew install --cask obsidian
+brew install --cask opencode-desktop
+brew install --cask openchamber
 brew install --cask raycast   # No need for Alfred
 brew install --cask rectangle # Split screen - Also look at https://apple.stackexchange.com/questions/309708/shortcuts-of-split-view
 brew install --cask visual-studio-code
+brew install --cask voxtype # voxtype.io - Local AI voice dictation (Mac and Linux)
 brew install --cask whimsical
 
 # Brew packages
 brew install carapace # Auto-completion for the shell -
 brew install fzf      # Needed for Neovim (LazyVim nvim-fzf) and zoxide
 brew install gcc      # Needed for Neovim (LazyVim libstdc++)
+brew install gh       # gh auth login
+brew install ghostty
 brew install git
 brew install git-gui
 brew install gron # Grep JSON output "fgrep" https://github.com/tomnomnom/gron
 brew tap heroku/brew && brew install heroku
+brew install lazygit
 brew install mas # Mac App Store apps
 brew install neovim
 brew install node
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 brew install anomalyco/tap/opencode
 brew install pipx
 brew install ripgrep
+brew trust docker/tap && brew install docker/tap/sbx # Dcker sandboxes for agents
+brew install tmux
 brew install uv
 brew install wget
 brew install zoxide
@@ -62,6 +73,7 @@ brew tap common-fate/granted && brew install granted
 brew install k9s
 brew install kubectl
 brew install kubectx
+brew install skyhook-io/tap/radar-desktop # k8s Radar UI
 # Terraform
 brew install tfenv
 brw install terramate
