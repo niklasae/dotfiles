@@ -16,6 +16,38 @@ auto_sync = false
 [settings.system_packages]
 sudo = true
 
+[bootstrap.repos]
+"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" }  # Pin version using --> ref="<sha>"
+
+[tools]
+neovim = "0.11"
+ripgrep = "latest"
+fd = "latest"
+gh = "latest"
+gitui = "latest"
+oh-my-posh = "latest"
+"npm:skills" = "1.4.0"
+
+[tasks.skills]
+run = """
+skills add mattpocock/skills -g -y -a claude-code --skill tdd --skill grill-me --skill gill-with-doc --skill to-spec
+skills add obra/superpowers -g -y -a claude-code --skill brainstorming
+"""
+
+[tasks."skills:update"]
+run = "skills update -g -y"
+
+[tasks."nvim:restore"]
+run = """
+nvim --headless "+Lazy! restore" +qa
+NVIM_APPNAME=nvim-pure nvim --headless +qa
+"""
+
+[hooks]
+# FIXME
+# post-dotfiles = "mise run nvim:restore"
+postinstall = "mise run skills"
+
 [dotfiles]
 "~/.config/mise/config.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.toml" }
 "~/.config/mise/config.macos.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.macos.toml" }
@@ -52,35 +84,3 @@ sudo = true
 "~/.gitconfig" = { mode = "absent" }
 "~/.gitignore" = { mode = "absent" }
 "~/.pip" = { mode = "absent" }
-
-[bootstrap.repos]
-"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" } # Pin version using --> ref="<sha>"
-
-[tools]
-neovim = "0.11"
-ripgrep = "latest"
-fd = "latest"
-gh = "latest"
-gitui = "latest"
-oh-my-posh = "latest"
-"npm:skills" = "1.4.0"
-
-[tasks.skills]
-run = """
-skills add mattpocock/skills -g -y -a claude-code --skill tdd --skill grill-me --skill gill-with-doc --skill to-spec
-skills add obra/superpowers -g -y -a claude-code --skill brainstorming
-"""
-
-[tasks."skills:update"]
-run = "skills update -g -y"
-
-[tasks."nvim:restore"]
-run = """
-nvim --headless "+Lazy! restore" +qa
-NVIM_APPNAME=nvim-pure nvim --headless +qa
-"""
-
-[hooks]
-# FIXME
-# post-dotfiles = "mise run nvim:restore"
-postinstall = "mise run skills"
