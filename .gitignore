@@ -11,6 +11,8 @@ opencode/skills/
 # Machine-local OpenCode overrides and secret files referenced via {file:...}
 opencode/local/
 opencode/**/*.key
+# Command stubs written by the plannotator installer (setup_opencode.sh)
+opencode/commands/plannotator-*.md
 
 # Neovim runtime state that can leak into the config dir
 nvim/.luarc.json
@@ -20,6 +22,11 @@ nvim-pure/.luarc.json
 # aws-sso keeps a token cache beside its config
 aws-sso/cache/
 aws-sso/**/token*
+aws-sso/cache.json
+aws-sso/storage.lock
+
+# worktrunk runtime lock written beside approvals.toml
+worktrunk/*.lock
 
 # PIP
 pip/zsh-cache
