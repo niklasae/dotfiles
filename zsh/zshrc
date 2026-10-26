@@ -139,7 +139,7 @@ export NVM_HOME="$HOME/.nvm"
 
 
 # aliases
-[[ -f ~/.aliases ]] && source ~/.aliases
+[[ -f ~/Code/niklasae/dotfiles/zsh/aliases ]] && source ~/Code/niklasae/dotfiles/zsh/aliases
 
 # Other...
 # ~~~~~~~~
