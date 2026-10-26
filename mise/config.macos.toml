@@ -1,0 +1,14 @@
+# :schema https://mise.en.dev/schema/mise.json
+[bootstrap.packages]
+"brew-cask:kitty" = "latest"
+# "brew-cask:karabiner-elements" = "latest"
+# "brew-cask:raycast"            = "latest"
+"brew-cask:1password" = "latest"
+"brew-cask:1password-cli" = "latest"
+
+[bootstrap.macos.defaults]
+"com.apple.dock" = { autohide = true, tilesize = 40 }
+"NSGlobalDomain" = { KeyRepeat = 2, InitialKeyRepeat = 15 }
+
+# [dotfiles]
+# "~/.config/karabiner/karabiner.json" = { source = "~/Code/niklasae/dotfiles/karabiner/karabiner.json" }

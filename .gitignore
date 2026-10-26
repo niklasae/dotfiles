@@ -1,2 +1,32 @@
+# OS noise
+.DS_Store
+**/.DS_Store
+
+# Logs
 *.log
+
+# OpenCode
+# Installer output, reproduced by `mise run skills`
+opencode/skills/
+# Machine-local OpenCode overrides and secret files referenced via {file:...}
+opencode/local/
+opencode/**/*.key
+
+# Neovim runtime state that can leak into the config dir
+nvim/.luarc.json
+nvim-pure/.luarc.json
+**/lazy-lock.json.bak
+
+# aws-sso keeps a token cache beside its config
+aws-sso/cache/
+aws-sso/**/token*
+
+# PIP
 pip/zsh-cache
+
+# Belt and braces: never commit these by name
+mise.local.toml
+*.pem
+*.p12
+.env
+.env.*

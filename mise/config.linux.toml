@@ -1,0 +1,9 @@
+# :schema https://mise.en.dev/schema/mise.json
+[bootstrap.packages]
+"apt:zsh" = "latest"
+"apt:build-essential" = "latest"
+"apt:kitty" = "latest"
+"apt:xclip" = "latest"
+
+[bootstrap.user]
+shell = "/usr/bin/zsh"

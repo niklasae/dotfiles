@@ -1,0 +1,87 @@
+# :schema https://mise.en.dev/schema/mise.json
+[settings]
+auto_env = true
+trusted_config_paths = [
+  "/Users/niklas/Code/work/jbl-web-wt",
+  "/Users/niklas/Code/work/jbl-crm-wt",
+]
+
+[settings.dotfiles]
+root = "/Users/niklas/Code/niklasae/dotfiles"
+default_mode = "symlink"
+
+[settings.skills]
+auto_sync = false
+
+[settings.system_packages]
+sudo = true
+
+[dotfiles]
+"~/.config/mise/config.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.toml" }
+"~/.config/mise/config.macos.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.macos.toml" }
+"~/.config/mise/config.linux.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.linux.toml" }
+# "~/.config/mise" = { source = "~/Code/niklasae/dotfiles/mise", mode = "symlink-each" }
+"~/.bin" = { source = "~/Code/niklasae/dotfiles/bin" }
+"~/.zprofile" = { source = "~/Code/niklasae/dotfiles/zsh/zprofile" }
+"~/.zshenv" = { source = "~/Code/niklasae/dotfiles/zsh/zshenv" }
+"~/.zshrc" = { source = "~/Code/niklasae/dotfiles/zsh/zshrc" }
+"~/.pylintrc" = { source = "~/Code/niklasae/dotfiles/pylintrc" }
+"~/.config/git" = { source = "~/Code/niklasae/dotfiles/git" }
+"~/.config/pip" = { source = "~/Code/niklasae/dotfiles/pip" }
+"~/.config/nvim" = { source = "~/Code/niklasae/dotfiles/nvim" }
+"~/.config/nvim-pure" = { source = "~/Code/niklasae/dotfiles/nvim-pure" }
+"~/.config/kitty" = { source = "~/Code/niklasae/dotfiles/kitty" }
+"~/.config/gitui" = { source = "~/Code/niklasae/dotfiles/gitui" }
+"~/.config/omp" = { source = "~/Code/niklasae/dotfiles/omp" }
+"~/.config/worktrunk" = { source = "~/Code/niklasae/dotfiles/worktrunk" }
+# "~/.config/aws-sso" = { source = "~/Code/niklasae/dotfiles/aws-sso" }
+"~/.config/gh/config.yml" = { source = "~/Code/niklasae/dotfiles/gh/config.yml" }
+"~/.config/opencode/opencode.jsonc" = { source = "~/Code/niklasae/dotfiles/opencode/opencode.jsonc" }
+"~/.config/opencode/agents" = { source = "~/Code/niklasae/dotfiles/opencode/agents" }
+"~/.config/opencode/commands" = { source = "~/Code/niklasae/dotfiles/opencode/commands" }
+"~/.config/opencode/plugins" = { source = "~/Code/niklasae/dotfiles/opencode/plugins" }
+"~/.config/opencode/themes" = { source = "~/Code/niklasae/dotfiles/opencode/themes" }
+"~/.claude/CLAUDE.md" = { source = "~/Code/niklasae/dotfiles/claude/CLAUDE.md" }
+"~/.claude/agents" = { source = "~/Code/niklasae/dotfiles/claude/agents" }
+"~/.claude/commands" = { source = "~/Code/niklasae/dotfiles/claude/commands" }
+# "~/.claude/skills" = { source = "~/Code/niklasae/dotfiles/skills", mode = "symlink-each" }
+"~/.claude/settings.json" = { source = "~/Code/niklasae/dotfiles/claude/settings.json" }
+# Absent
+"~/.aliases" = { mode = "absent" }
+"~/.git" = { mode = "absent" }
+"~/.gitconfig" = { mode = "absent" }
+"~/.gitignore" = { mode = "absent" }
+"~/.pip" = { mode = "absent" }
+
+# FIXME:
+# [bootstrap.repos]
+# "~/.oh-my-zsh" = "https://github.com/ohmyzsh/ohmyzsh.git"
+
+[tools]
+neovim = "0.11"
+ripgrep = "latest"
+fd = "latest"
+gh = "latest"
+gitui = "latest"
+oh-my-posh = "latest"
+"npm:skills" = "1.4.0"
+
+[tasks.skills]
+run = """
+skills add mattpocock/skills -g -y -a claude-code --skill tdd --skill grill-me --skill to-prd
+skills add obra/superpowers -g -y -a claude-code --skill brainstorming
+"""
+
+[tasks."skills:update"]
+run = "skills update -g -y"
+
+[tasks."nvim:restore"]
+run = """
+nvim --headless "+Lazy! restore" +qa
+NVIM_APPNAME=nvim-pure nvim --headless +qa
+"""
+
+[hooks]
+# FIXME
+# post-dotfiles = "mise run nvim:restore"
+postinstall = "mise run skills"
