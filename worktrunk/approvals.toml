@@ -1,0 +1,11 @@
+[projects."github.com/jobylon/jbl-web"]
+approved-commands = [
+  """
+containers=$(cd {{ worktree_path }} && mise exec -- docker compose ps -aq 2>/dev/null)
+if [ -n "$containers" ]; then
+  echo "Docker containers still exist for this worktree. Run first:" >&2
+  echo "  (cd {{ worktree_path }} && docker compose down -v)" >&2
+  exit 1
+fi
+""",
+]
