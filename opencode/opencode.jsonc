@@ -36,5 +36,8 @@
         "chrome-devtools-mcp@latest"
       ]
     }
-  }
+  },
+  "skills": [
+    "~/Code/niklasae/dotfiles/agents/skills"
+  ]
 }
