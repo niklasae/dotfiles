@@ -1,0 +1,35 @@
+return {}
+-- { "folke/noice.nvim",
+-- opts = {
+--    views = {
+--      cmdline_popup = {
+--        position = {
+--          row = "90%", -- Position it near the bottom of the screen
+--          col = "50%", -- Center it horizontally
+--        },
+--        size = {
+--          width = 60, -- Set desired width
+--          height = "auto", -- Adjust height automatically
+--        },
+--      },
+--      popupmenu = {
+--        relative = "editor",
+--        position = {
+--          row = "90%", -- Match cmdline_popup position
+--          col = "50%", -- Center it horizontally
+--        },
+--        size = {
+--          width = 60,
+--          height = 10,
+--        },
+--        border = {
+--          style = "rounded",
+--          padding = { 0, 1 },
+--        },
+--        win_options = {
+--          winhighlight = { Normal = "Normal", FloatBorder = "NoiceCmdlinePopupBorder" },
+--        },
+--      },
+--    },
+--  },
+-- }
