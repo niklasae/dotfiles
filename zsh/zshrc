@@ -174,14 +174,16 @@ export MYSQLCLIENT_LDFLAGS="-L$MYSQLCLIENT_DIR/lib -lmysqlclient"
 export LDFLAGS="-L$(brew --prefix libmemcached)/lib/"
 export CPPFLAGS="-I$(brew --prefix libmemcached)/include/"
 
+# mise
+eval "$(mise activate)"
+
+# fpath additions (e.g. ~/.zsh/completions) go here, before compinit
+autoload -U compinit && compinitautoload -U compinit && compinit
+
 # carapace
-autoload -U compinit && compinit
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
 zstyle ':completion:*' format $'\e[2;37mCompleting %d\e[m'
 source <(carapace _carapace)
-
-# mise
-eval "$(mise activate)"
 
 # oh-my-posh
 ZSH_THEME=""  # Unset to use Oh-My-Posh
