@@ -17,7 +17,7 @@ auto_sync = false
 sudo = true
 
 [bootstrap.repos]
-"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" } # Pin version using --> ref="<sha>"
+"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" }  # Pin version using --> ref="<sha>"
 
 [tools]
 neovim = "0.11"
@@ -26,7 +26,8 @@ fd = "latest"
 gh = "latest"
 gitui = "latest"
 oh-my-posh = "latest"
-"npm:skills" = "1.4.0"
+"npm:skills" = "latest"
+"github:Gaurav-Gosain/tuios" = "latest"
 
 [tasks.skills]
 run = """
