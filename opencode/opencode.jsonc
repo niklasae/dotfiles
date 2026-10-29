@@ -4,7 +4,6 @@
     "background_compaction": true,
   },
   "plugin": [
-    "opencode-openai-codex-auth@latest",
     "opencode-with-claude",
     "@plannotator/opencode@latest",
     "@mohak34/opencode-notifier@latest"
@@ -40,6 +39,6 @@
     }
   },
   "skills": [
-    "~/Code/niklasae/dotfiles/agents/skills"
+    "~/Code/niklasae/dotfiles/agents/skills",
   ]
 }
