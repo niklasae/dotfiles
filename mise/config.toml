@@ -20,7 +20,7 @@ sudo = true
 "~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" }  # Pin version using --> ref="<sha>"
 
 [tools]
-neovim = "0.11"
+neovim = "0.12"
 ripgrep = "latest"
 fd = "latest"
 gh = "latest"
