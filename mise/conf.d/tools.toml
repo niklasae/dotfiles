@@ -1,0 +1,31 @@
+# :schema https://mise.en.dev/schema/mise.json
+
+[tools]
+neovim = "0.12"
+ripgrep = "latest"
+fd = "latest"
+gh = "latest"
+gitui = "latest"
+oh-my-posh = "latest"
+"npm:skills" = "latest"
+"github:Gaurav-Gosain/tuios" = "latest"
+
+[tasks.skills]
+run = """
+skills add mattpocock/skills -g -y -a claude-code --skill tdd --skill grill-me --skill grill-with-docs --skill to-spec
+skills add obra/superpowers -g -y -a claude-code --skill brainstorming
+"""
+
+[tasks."skills:update"]
+run = "skills update -g -y"
+
+[tasks."nvim:restore"]
+run = """
+nvim --headless "+Lazy! restore" +qa
+NVIM_APPNAME=nvim-pure nvim --headless +qa
+"""
+
+[hooks]
+# Post dotfiles hook to restore nvim plugins after dotfiles are installed
+# post-dotfiles = "mise run nvim:restore"
+postinstall = "mise run skills && mise run nvim:restore"

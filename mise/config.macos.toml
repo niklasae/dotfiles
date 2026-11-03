@@ -10,5 +10,23 @@
 "com.apple.dock" = { autohide = true, tilesize = 40 }
 "NSGlobalDomain" = { KeyRepeat = 2, InitialKeyRepeat = 15 }
 
+[bootstrap.macos.defaults.screensaver]
+askForPassword = 1
+askForPasswordDelay = 0
+
+[bootstrap.macos.finder]
+preferred_view_style = "column"
+show_extensions_warning = false
+show_pathbar = true
+show_status_bar = true
+show_all_files = true
+
+# [bootstrap.macos.dock]
+# autohide = true
+# # largesize = 64
+# show_recents = false
+# tilesize = 50
+# magnification = false
+
 # [dotfiles]
 # "~/.config/karabiner/karabiner.json" = { source = "~/Code/niklasae/dotfiles/karabiner/karabiner.json" }

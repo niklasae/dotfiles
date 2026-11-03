@@ -1,0 +1,45 @@
+# :schema https://mise.en.dev/schema/mise.json
+
+[settings.dotfiles]
+root = "/Users/niklas/Code/niklasae/dotfiles"
+
+default_mode = "symlink"
+
+[dotfiles]
+# Absent
+"~/.aliases" = { mode = "absent" }
+# "~/.config/mise" = { source = "~/Code/niklasae/dotfiles/mise", mode = "symlink-each" }
+"~/.bin" = { source = "~/Code/niklasae/dotfiles/bin" }
+"~/.claude/CLAUDE.md" = { source = "~/Code/niklasae/dotfiles/claude/CLAUDE.md" }
+"~/.claude/agents" = { source = "~/Code/niklasae/dotfiles/claude/agents" }
+"~/.claude/commands" = { source = "~/Code/niklasae/dotfiles/claude/commands" }
+# "~/.claude/skills" = { source = "~/Code/niklasae/dotfiles/skills", mode = "symlink-each" }
+"~/.claude/settings.json" = { source = "~/Code/niklasae/dotfiles/claude/settings.json" }
+# "~/.config/aws-sso" = { source = "~/Code/niklasae/dotfiles/aws-sso" }
+"~/.config/gh/config.yml" = { source = "~/Code/niklasae/dotfiles/gh/config.yml" }
+"~/.config/git" = { source = "~/Code/niklasae/dotfiles/git" }
+"~/.config/gitui" = { source = "~/Code/niklasae/dotfiles/gitui" }
+"~/.config/kitty" = { source = "~/Code/niklasae/dotfiles/kitty" }
+"~/.config/mise/conf.d" = { source = "~/Code/niklasae/dotfiles/mise/conf.d" }
+"~/.config/mise/config.linux.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.linux.toml" }
+"~/.config/mise/config.macos.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.macos.toml" }
+"~/.config/mise/config.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.toml" }
+"~/.config/nvim" = { source = "~/Code/niklasae/dotfiles/nvim" }
+"~/.config/nvim-pure" = { source = "~/Code/niklasae/dotfiles/nvim-pure" }
+"~/.config/omp" = { source = "~/Code/niklasae/dotfiles/omp" }
+"~/.config/opencode/agents" = { source = "~/Code/niklasae/dotfiles/opencode/agents" }
+"~/.config/opencode/commands" = { source = "~/Code/niklasae/dotfiles/opencode/commands" }
+"~/.config/opencode/opencode.jsonc" = { source = "~/Code/niklasae/dotfiles/opencode/opencode.jsonc" }
+"~/.config/opencode/plugins" = { source = "~/Code/niklasae/dotfiles/opencode/plugins" }
+"~/.config/opencode/themes" = { source = "~/Code/niklasae/dotfiles/opencode/themes" }
+"~/.config/pip" = { source = "~/Code/niklasae/dotfiles/pip" }
+"~/.config/tuios/config.toml" = { source = "~/Code/niklasae/dotfiles/tuios/config.toml" }
+"~/.config/worktrunk" = { source = "~/Code/niklasae/dotfiles/worktrunk" }
+"~/.git" = { mode = "absent" }
+"~/.gitconfig" = { mode = "absent" }
+"~/.gitignore" = { mode = "absent" }
+"~/.pip" = { mode = "absent" }
+"~/.pylintrc" = { source = "~/Code/niklasae/dotfiles/pylintrc" }
+"~/.zprofile" = { source = "~/Code/niklasae/dotfiles/zsh/zprofile" }
+"~/.zshenv" = { source = "~/Code/niklasae/dotfiles/zsh/zshenv" }
+"~/.zshrc" = { source = "~/Code/niklasae/dotfiles/zsh/zshrc" }
