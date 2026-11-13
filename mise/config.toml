@@ -18,4 +18,4 @@ dotfiles = "~/.config/mise/conf.d/dotfiles.toml"
 packages = "~/.config/mise/conf.d/brew.toml"
 
 [bootstrap.repos]
-"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" }  # Pin version using --> ref="<sha>"
+"~/.oh-my-zsh" = { url = "https://github.com/ohmyzsh/ohmyzsh.git" } # Pin version using --> ref="<sha>"

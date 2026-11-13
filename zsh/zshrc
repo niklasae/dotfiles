@@ -178,7 +178,7 @@ export CPPFLAGS="-I$(brew --prefix libmemcached)/include/"
 eval "$(mise activate)"
 
 # fpath additions (e.g. ~/.zsh/completions) go here, before compinit
-autoload -U compinit && compinitautoload -U compinit && compinit
+autoload -U compinit && compinit
 
 # carapace
 export CARAPACE_BRIDGES='zsh,fish,bash,inshellisense' # optional
