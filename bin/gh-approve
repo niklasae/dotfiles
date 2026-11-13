@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+# gh-approve: review and approve GitHub PRs one at a time.
+#
+# Usage:
+#   gh-approve [-R owner/repo] [-t] [PR...]
+#
+#   -R  Repository (default: $GH_APPROVE_REPO, else the current git repo)
+#   -t  Review in the terminal (description + diff) instead of the browser
+#   -h  Show this help
+#
+# With no PR numbers, it uses the open PRs that request your review.
+#
+# Examples:
+#   gh-approve                                     # PRs requesting your review, in the current repo
+#   gh-approve -R jobylon/jbl-web 8298 8340 8356   # specific PRs
+#   gh-approve -t 8298                             # review in the terminal instead of the browser
+#
+
+set -euo pipefail
+
+repo="${GH_APPROVE_REPO:-}"
+mode=web
+
+usage() { sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'; }
+
+while getopts ":R:th" opt; do
+  case "$opt" in
+  R) repo="$OPTARG" ;;
+  t) mode=terminal ;;
+  h)
+    usage
+    exit 0
+    ;;
+  *)
+    usage >&2
+    exit 1
+    ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+repo_args=()
+[[ -n "$repo" ]] && repo_args=(--repo "$repo")
+
+gh_pr() { gh pr "$@" ${repo_args[@]+"${repo_args[@]}"}; }
+
+if [[ $# -eq 0 ]]; then
+  prs=$(gh_pr list --search "review-requested:@me" --json number --jq '.[].number')
+  if [[ -z "$prs" ]]; then
+    echo "No PRs awaiting your review."
+    exit 0
+  fi
+  # shellcheck disable=SC2086
+  set -- $prs
+fi
+
+approved=()
+skipped=()
+
+for n in "$@"; do
+  echo
+  gh_pr view "$n" --json number,title,author \
+    --jq '"#\(.number) \(.title) (@\(.author.login))"'
+
+  if [[ "$mode" == web ]]; then
+    gh_pr view "$n" --web
+  else
+    gh_pr view "$n"
+    gh_pr diff "$n"
+  fi
+
+  printf "Approve #%s? [y/N/q] " "$n"
+  read -r ans </dev/tty
+  case "$ans" in
+  y | Y) gh_pr review "$n" --approve && approved+=("$n") ;;
+  q | Q) break ;;
+  *)
+    skipped+=("$n")
+    echo "Skipped #$n"
+    ;;
+  esac
+done
+
+echo
+echo "Approved: ${approved[*]:-none}"
+echo "Skipped:  ${skipped[*]:-none}"
