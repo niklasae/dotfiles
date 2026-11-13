@@ -13,6 +13,9 @@ opencode/local/
 opencode/**/*.key
 # Command stubs written by the plannotator installer (setup_opencode.sh)
 opencode/commands/plannotator-*.md
+# Agent-state plugin owned by tuios, reproduced by `mise run tuios:integration`
+opencode/plugins/tuios-agent-state.js
+opencode/plugins/tuios-agent-state/
 
 # Neovim runtime state that can leak into the config dir
 nvim/.luarc.json
