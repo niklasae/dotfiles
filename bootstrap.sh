@@ -44,9 +44,14 @@ if [ ! -d "$R/.git" ]; then
 fi
 
 # 4. Chicken-and-egg: mise's own config must exist before it can manage itself.
-#    Only config.toml is linked here; the first `mise dot apply` links the rest via symlink-each.
+#    config.toml is enough to find conf.d (mise resolves the symlink and reads the
+#    fragments beside the real file); miserc.toml must be linked too, because mise
+#    reads it before any config file, so the dotfiles step creating it would come
+#    too late for this run and config.macos.toml / config.linux.toml would not load.
+#    The first `mise dot apply` links the rest.
 mkdir -p "$HOME/.config/mise"
 ln -sf "$R/mise/config.toml" "$HOME/.config/mise/config.toml"
+ln -sf "$R/mise/miserc.toml" "$HOME/.config/mise/miserc.toml"
 
 # 5. Hand over to mise
 cd "$R"

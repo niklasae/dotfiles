@@ -1,6 +1,6 @@
 # :schema https://mise.en.dev/schema/mise.json
 [settings]
-auto_env = true
+# auto_env lives in miserc.toml; it has no effect here
 trusted_config_paths = [
   "/Users/niklas/Code/work/jbl-web-wt",
   "/Users/niklas/Code/work/jbl-crm-wt",

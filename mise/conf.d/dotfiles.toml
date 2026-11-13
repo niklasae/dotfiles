@@ -24,6 +24,7 @@ default_mode = "symlink"
 "~/.config/mise/config.linux.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.linux.toml" }
 "~/.config/mise/config.macos.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.macos.toml" }
 "~/.config/mise/config.toml" = { source = "~/Code/niklasae/dotfiles/mise/config.toml" }
+"~/.config/mise/miserc.toml" = { source = "~/Code/niklasae/dotfiles/mise/miserc.toml" }
 "~/.config/nvim" = { source = "~/Code/niklasae/dotfiles/nvim" }
 "~/.config/nvim-pure" = { source = "~/Code/niklasae/dotfiles/nvim-pure" }
 "~/.config/omp" = { source = "~/Code/niklasae/dotfiles/omp" }

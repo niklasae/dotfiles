@@ -31,4 +31,8 @@ NVIM_APPNAME=nvim-pure nvim --headless +qa
 [hooks]
 # Post dotfiles hook to restore nvim plugins after dotfiles are installed
 # post-dotfiles = "mise run nvim:restore"
-postinstall = "mise run skills && mise run tuios:integration && mise run nvim:restore"
+postinstall = [
+  "mise run skills",
+  "mise run tuios:integration",
+  "mise run nvim:restore",
+]

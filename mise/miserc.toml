@@ -1,0 +1,6 @@
+# :schema https://mise.en.dev/schema/miserc.json
+#
+# mise reads this before any config file, which is the only place `auto_env`
+# works: set under [settings] in config.toml it is read too late to affect
+# config discovery, and config.macos.toml / config.linux.toml never load.
+auto_env = true

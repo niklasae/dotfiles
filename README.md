@@ -16,6 +16,7 @@ curl -fsSL https://mise.run | sh
 git clone git@github.com:niklasae/dotfiles.git ~/Code/niklasae/dotfiles
 mkdir -p ~/.config/mise
 ln -sf ~/Code/niklasae/dotfiles/mise/config.toml ~/.config/mise/config.toml
+ln -sf ~/Code/niklasae/dotfiles/mise/miserc.toml ~/.config/mise/miserc.toml
 cd ~/Code/niklasae/dotfiles && mise trust && mise bootstrap --yes
 ```
 
