@@ -1,0 +1,234 @@
+#!/usr/bin/env bash
+# gh-review2oc: collect a GitHub PR's open review feedback and hand it to opencode.
+#
+# Usage:
+#   gh-review2oc [-R owner/repo] [-o file] [-n] [PR]
+#
+#   -R  Repository (default: $GH_APPROVE_REPO, else the current git repo)
+#   -o  Write the review file here (default: a file in $TMPDIR)
+#   -n  Only write the review file, don't launch opencode
+#   -h  Show this help
+#
+# With no PR number, it uses the PR for the current branch.
+#
+# The review file holds every unresolved review thread, with its diff hunk and
+# the full chain of replies, plus the body of every CHANGES_REQUESTED (rejected)
+# and COMMENTED review the reviewer hasn't since settled with an approval.
+#
+# Examples:
+#   gh-review2oc                             # the PR for the current branch
+#   gh-review2oc 8298                        # a specific PR in the current repo
+#   gh-review2oc -R jobylon/jbl-web 8298     # a specific PR elsewhere
+#   gh-review2oc -n 8298                     # just write the file, print the path
+#
+
+set -euo pipefail
+
+repo="${GH_APPROVE_REPO:-}"
+out=""
+launch=yes
+
+usage() { sed -n '2,22p' "$0" | sed 's/^# \{0,1\}//'; }
+
+while getopts ":R:o:nh" opt; do
+  case "$opt" in
+  R) repo="$OPTARG" ;;
+  o) out="$OPTARG" ;;
+  n) launch=no ;;
+  h)
+    usage
+    exit 0
+    ;;
+  *)
+    usage >&2
+    exit 1
+    ;;
+  esac
+done
+shift $((OPTIND - 1))
+
+if [[ $# -gt 1 ]]; then
+  usage >&2
+  exit 1
+fi
+
+repo_args=()
+[[ -n "$repo" ]] && repo_args=(--repo "$repo")
+
+gh_pr() { gh pr "$@" ${repo_args[@]+"${repo_args[@]}"}; }
+
+if [[ -n "${1:-}" ]]; then
+  number="$1"
+else
+  number=$(gh_pr view --json number --jq .number) || {
+    echo "No PR for the current branch. Pass a PR number." >&2
+    exit 1
+  }
+fi
+
+if [[ -z "$repo" ]]; then
+  repo=$(gh repo view --json nameWithOwner --jq .nameWithOwner)
+fi
+owner="${repo%%/*}"
+name="${repo##*/}"
+
+read -r -d '' query <<'GRAPHQL' || true
+query($owner: String!, $name: String!, $number: Int!) {
+  repository(owner: $owner, name: $name) {
+    pullRequest(number: $number) {
+      number
+      title
+      url
+      author { login }
+      reviews(last: 100) {
+        totalCount
+        nodes { author { login } state body submittedAt }
+      }
+      reviewThreads(first: 100) {
+        pageInfo { hasNextPage }
+        nodes {
+          isResolved
+          isOutdated
+          path
+          line
+          originalLine
+          comments(first: 100) {
+            pageInfo { hasNextPage }
+            nodes {
+              author { login }
+              body
+              createdAt
+              diffHunk
+              url
+              isMinimized
+              minimizedReason
+            }
+          }
+        }
+      }
+    }
+  }
+}
+GRAPHQL
+
+# Shared definitions for the two jq programs below. Both run on the raw
+# response so the rendered file and the printed counts can't drift apart.
+read -r -d '' common <<'JQ' || true
+def who: .author.login // "ghost";
+def hastext: (. // "") | test("\\S");
+
+# A reviewer settles their own feedback by approving later on (and a dismissed
+# review is settled by the maintainer), so for each reviewer keep only the
+# reviews submitted after their last approval or dismissal. Of those, a
+# CHANGES_REQUESTED always counts, and a COMMENTED one only when it says
+# something — an empty one is just the envelope around the inline comments.
+def open_reviews:
+  [.reviews.nodes[] | select(.state != "PENDING")]
+  | group_by(who)
+  | map(
+      sort_by(.submittedAt)
+      | (map(.state == "APPROVED" or .state == "DISMISSED") | rindex(true)) as $settled
+      | if $settled == null then . else .[$settled + 1:] end
+    )
+  | (add // [])
+  | map(select(.state == "CHANGES_REQUESTED"
+               or (.state == "COMMENTED" and (.body | hastext))))
+  | sort_by(.submittedAt);
+
+def open_threads:
+  [.reviewThreads.nodes[] | select(.isResolved | not)];
+
+def truncated:
+  [(.reviews.totalCount > (.reviews.nodes | length)),
+   .reviewThreads.pageInfo.hasNextPage,
+   (.reviewThreads.nodes[] | .comments.pageInfo.hasNextPage)]
+  | any;
+JQ
+
+read -r -d '' render <<'JQ' || true
+.data.repository.pullRequest as $pr
+| ($pr | open_reviews) as $reviews
+| ($pr | open_threads) as $threads
+| [
+    "# Open review feedback for PR #\($pr.number)",
+    "",
+    "\($pr.title) (@\($pr | who))",
+    $pr.url,
+    ""
+  ]
+  + (if ($pr | truncated) then
+      ["> **Heads up:** this PR has more feedback than one page of the API call,",
+       "> so something may be missing here. Check the PR on GitHub before you",
+       "> treat this file as the whole picture.",
+       ""]
+     else [] end)
+  + ["## Open review verdicts (\($reviews | length))", ""]
+  + (if ($reviews | length) > 0 then
+      [$reviews[]
+       | "### @\(who) — \(.state) (\(.submittedAt))",
+         "",
+         (if (.body | hastext) then .body else "_(no written comment — see the threads below)_" end),
+         ""]
+     else ["_None._", ""] end)
+  + ["## Unresolved threads (\($threads | length))", ""]
+  + (if ($threads | length) > 0 then
+      [$threads | to_entries[]
+       | .key as $i
+       | .value
+       | "### \($i + 1). \(.path)\(if .line then ":\(.line)" elif .originalLine then ":\(.originalLine)" else "" end)\(if .isOutdated then " _(outdated)_" else "" end)",
+         "",
+         (.comments.nodes[0].url // ""),
+         "",
+         "```diff",
+         (.comments.nodes[0].diffHunk // "(no diff hunk)"),
+         "```",
+         "",
+         ([.comments.nodes[]
+           | "**@\(who)** (\(.createdAt))\(if .isMinimized then " _(hidden: \(.minimizedReason // "minimized"))_" else "" end):\n\n\(.body)\n"]
+          | join("\n"))]
+     else ["_None._", ""] end)
+  | join("\n")
+JQ
+
+read -r -d '' counts <<'JQ' || true
+.data.repository.pullRequest
+| "\(open_threads | length) \(open_reviews | length) \(truncated)"
+JQ
+
+if [[ -z "$out" ]]; then
+  out="${TMPDIR:-/tmp}/pr-review-${owner}-${name}-${number}.md"
+fi
+
+raw=$(gh api graphql \
+  -F owner="$owner" -F name="$name" -F number="$number" \
+  -f query="$query")
+
+jq -r "$common
+$render" <<<"$raw" >"$out"
+
+read -r threads verdicts truncated < <(jq -r "$common
+$counts" <<<"$raw")
+
+echo "#$number in $repo: $threads unresolved thread(s), $verdicts open review(s)"
+echo "$out"
+
+if [[ "$truncated" == true ]]; then
+  echo "Warning: GitHub has more feedback than this query fetched; check the PR." >&2
+fi
+
+if [[ "$threads" -eq 0 && "$verdicts" -eq 0 ]]; then
+  echo "Nothing to address."
+  exit 0
+fi
+
+[[ "$launch" == no ]] && exit 0
+
+opencode --prompt "Address the open review feedback in $out.
+
+It holds the unresolved review threads and the open review verdicts for PR #$number in $repo — both the inline comments and the body of each rejected or commented review. Work through them in order: for each one open the file and line it points at, work out what the reviewer is asking for, and make the change.
+
+Read every thread to the end before you touch anything. A thread is the whole conversation, and a later reply often narrows, answers or withdraws the first comment — the latest word wins, not the first.
+
+Ask me rather than guess. Stop and ask, with your recommendation and what you need from me, whenever a comment is unclear, two reviewers (or a thread and a review verdict) want conflicting things, a comment conflicts with the code as it now stands, or you disagree with what's being asked. Wait for my answer before changing that code. Don't pick an interpretation silently, and don't skip a comment without telling me.
+
+When you're done, summarise what you changed per comment, and list anything you left alone with the reason."
