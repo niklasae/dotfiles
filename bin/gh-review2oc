@@ -5,7 +5,7 @@
 #   gh-review2oc [-R owner/repo] [-o file] [-n] [PR]
 #
 #   -R  Repository (default: $GH_APPROVE_REPO, else the current git repo)
-#   -o  Write the review file here (default: a file in $TMPDIR)
+#   -o  Write the review file here (default: ~/.local/share/gh-review2oc)
 #   -n  Only write the review file, don't launch opencode
 #   -h  Show this help
 #
@@ -196,7 +196,9 @@ read -r -d '' counts <<'JQ' || true
 JQ
 
 if [[ -z "$out" ]]; then
-  out="${TMPDIR:-/tmp}/pr-review-${owner}-${name}-${number}.md"
+  dir="${XDG_DATA_HOME:-$HOME/.local/share}/gh-review2oc"
+  mkdir -p "$dir"
+  out="$dir/$(date +%Y-%m-%d)-pr-review-${owner}-${name}-${number}.md"
 fi
 
 raw=$(gh api graphql \
